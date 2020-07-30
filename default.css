@@ -1,0 +1,41 @@
+@import "https://fonts.googleapis.com/css2?family=Ubuntu&display=fallback";
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  background: black;
+  color: white;
+  font: 18px/20px Ubuntu;
+  padding: 10px;
+}
+a {
+  color: #0e0;
+}
+button {
+  background: turquoise;
+  border: 1px solid turquoise;
+  color: black;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 16px;
+  padding: 7px 12px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button:hover {
+  border-color: darkcyan;
+  background: darkcyan;
+}
+hr {
+  margin: 10px 0;
+}
+h1 {
+  font-variant: small-caps;
+  margin: 10px;
+  text-align: center;
+}
