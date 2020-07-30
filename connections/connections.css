@@ -1,0 +1,12 @@
+label {
+  display: block;
+}
+#result {
+  display: flex;
+}
+#result div {
+  flex: 1;
+}
+#result ul {
+  margin-bottom: 15px;
+}
