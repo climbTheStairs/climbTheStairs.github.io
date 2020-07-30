@@ -5,23 +5,22 @@ const fileReader = new FileReader();
 const files = {};
 const readFile = function() {
   const id = this.id;
-  if (!this.files.length) {
+  const file = this.files.item(0);
+  $(`#${id}Name > span`).textContent = file ? file.name : "No file selected";
+  if (!file) {
     files[id] = null;
     return;
   }
   fileReader.onload = function(e) {
     files[id] = JSON.parse(this.result);
   };
-  fileReader.readAsText(this.files[0]);
+  fileReader.readAsText(file);
 };
 $$("input").forEach(x => x.addEventListener("change", readFile));
 const ig = {};
-$("button").onclick = () => {
-  // Don't run
-  if (!files.old || !files.new) {
-    alert("Connections file(s) missing!");
-    return;
-  }
+$("#compare").onclick = () => {
+  // Don't run if either file don't exist
+  if (!files.old || !files.new) return alert("Connections file(s) missing!");
   // Get changes
   const oldFollowers = Object.keys(files.old.followers);
   const newFollowers = Object.keys(files.new.followers);
