@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="file:///D:/Users/jinha/OneDrive/Desktop/all/default.css">
+</head>
+<body>
+<h1>Compare Instagram connections</h1>
+<section id="upload">
+  <label>
+    Upload old JSON:
+    <input type="file" id="old" accept=".json" style="width: 80%;">
+  </label>
+  <label>
+    Upload new JSON:
+    <input type="file" id="new" accept=".json" style="width: 80%;">
+  </label>
+  <button>Compare</button>
+</section>
+<hr>
+<section id="result">
+  <div>
+    Users who unfollowed you:
+    <ul id="unfollowers"></ul>
+    Users who followed you:
+    <ul id="followers"></ul>
+  </div>
+  <div>
+    Users whom you unfollowed:
+    <ul id="unfollowing"></ul>
+    Users whom you followed:
+    <ul id="following"></ul>
+  </div>
+</section>
+</body>
+</html>
