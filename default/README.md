@@ -1,8 +1,6 @@
 These are personal files I use for my projects.
 
 # Changelog
-Current: v1.3
-
 ## 1.3 (2020/08/20)
 * Uploaded to `climbthestairs.github.io`
 * Formatted `fonts.css`
