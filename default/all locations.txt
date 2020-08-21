@@ -1,4 +1,4 @@
-all
-all/projects/connections/css
-all/projects/notepad/css
-all/extensions/freespeech/css
+# All uses of `default`
+* all/projects/connections
+* all/projects/notepad
+* all/extensions/freespeech
