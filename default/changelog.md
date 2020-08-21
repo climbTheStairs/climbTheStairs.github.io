@@ -16,3 +16,9 @@ Current: v1.2
 
 ## 1.2 - 2020/08/20
 * Added styles for `ul`
+
+## 1.3 - 2020/08/20
+* Uploaded to `climbthestairs.github.io`
+* Changed all `.txt`s to `.md`s
+* Renamed `all locations.md` to `uses.md`
+* Updated `template.html` with stuff like a favicon
