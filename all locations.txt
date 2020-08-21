@@ -1,0 +1,4 @@
+all
+all/projects/connections/css
+all/projects/notepad/css
+all/extensions/freespeech/css

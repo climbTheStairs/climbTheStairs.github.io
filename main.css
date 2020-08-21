@@ -1,41 +1,58 @@
-@import "https://fonts.googleapis.com/css2?family=Ubuntu&display=fallback";
+@import "fonts.css";
+@import "buttons.css";
+@import "states.css";
+/* Vars */
+:root {
+  --bg: black;
+  --font: Ubuntu, sans-serif;
+  --mono: Ubuntu Mono, monospace;
+  --txt-clr: white;
+  --typeface: 18px/20px var(--font);
+}
+/* Reset default styles */
 * {
+  background: transparent;
+  border: none;
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
-body {
-  background: black;
+*:focus {
+  outline: none;
+}
+::selection {
+  background: #0f0;
   color: white;
-  font: 18px/20px Ubuntu;
+}
+/* Set page to full height */
+html, body {
+  height: 100%;
+}
+/* Tags */
+body {
+  background: var(--bg);
+  color: var(--txt-clr);
+  font: var(--typeface);
   padding: 10px;
 }
-a {
+a, .a {
   color: #0e0;
 }
-button {
-  background: turquoise;
-  border: 1px solid turquoise;
-  color: black;
-  cursor: pointer;
-  font-size: 10px;
-  font-weight: bold;
-  line-height: 16px;
-  padding: 7px 12px;
-  text-transform: uppercase;
-  transition: 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ul {
+  padding-left: 30px;
 }
-button:hover {
-  border-color: darkcyan;
-  background: darkcyan;
+textarea, input {
+  background: white;
+  font: 14px var(--mono);
+  resize: none;
 }
-hr {
+hr, .hr {
   margin: 10px 0;
 }
-h1 {
-  font-variant: small-caps;
-  margin: 10px;
-  text-align: center;
+/* Classes */
+.no-scroll {
+	scrollbar-width: none;
+}
+.no-scroll::-webkit-scrollbar {
+  display: none;
 }
