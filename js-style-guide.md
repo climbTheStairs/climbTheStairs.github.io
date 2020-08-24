@@ -151,5 +151,5 @@ for (let i = 0, l = arr.length; i < l; i++)
 * The use of jQuery and other libraries is discouraged.
 
 ## Sources of influence
-* https://github.com/airbnb/javascript
-* https://mediawiki.org/wiki/Manual:Coding_conventions/JavaScript
+* [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+* [MediaWiki Javascript coding conventions](https://mediawiki.org/wiki/Manual:Coding_conventions/JavaScript)
