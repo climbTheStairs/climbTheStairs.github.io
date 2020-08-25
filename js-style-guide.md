@@ -38,11 +38,11 @@
 ## Functions
 * Use anonymous function expressions assigned to a `const` variable instead of function declarations.
 * Wrap everything in an IIFE.
-* Wrap IIFEs in parentheses.
+* Do not wrap IIFEs in parentheses. This will result in a syntax error for arrow functions.
 ```javascript
 (() => {
     // Do stuff
-}();
+})();
 ```
 * Never use `arguments`, opt to use rest syntax `...` instead.
 * Use default parameter syntax.
