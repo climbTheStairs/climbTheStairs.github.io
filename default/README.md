@@ -1,6 +1,11 @@
 These are personal files I use for my projects. Please ignore this.
 
 # Changelog
+## 1.4 (2020/08/26)
+* Changed tab size from two spaces to four
+* Added `randStr()` function to `js/main.js`
+* Added `js/style-guide.md`
+
 ## 1.3 (2020/08/20)
 * Uploaded to `climbthestairs.github.io`
 * Formatted `fonts.css`
