@@ -47,7 +47,6 @@
 * Never use `arguments`, opt to use rest syntax `...` instead.
 * Use default parameter syntax.
 * Default parameters must not have side effects.
-* Always put default parameters last.
 * Use spreads `...` to call variadic functions.
 * When calling a function, arguments, whether single-line or multiline, should be formatted as an array.
 * Never place a space before function parentheses.
