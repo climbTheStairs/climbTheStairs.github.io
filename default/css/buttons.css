@@ -1,43 +1,43 @@
 :root {
-  --btn-bg-clr: turquoise;
-  --btn-bg-clr-focus: darkcyan;
-  --btn-gap: 8px;
-  --btn-txt-clr: black;
-  --btn-typeface: bold 10px/16px var(--font);
+    --btn-bg-clr: turquoise;
+    --btn-bg-clr-focus: darkcyan;
+    --btn-gap: 8px;
+    --btn-txt-clr: black;
+    --btn-typeface: bold 10px/16px var(--font);
 }
 button, .button {
-  background: var(--btn-bg-clr);
-  border: 1px solid var(--btn-bg-clr);
-  color: var(--btn-txt-clr);
-  cursor: pointer;
-  font: var(--btn-typeface);
-  padding: 7px 10px;
-  text-transform: uppercase;
-  transition: 0.3s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    background: var(--btn-bg-clr);
+    border: 1px solid var(--btn-bg-clr);
+    color: var(--btn-txt-clr);
+    cursor: pointer;
+    font: var(--btn-typeface);
+    padding: 7px 10px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 button.secondary, .button.secondary {
-  background: transparent;
-  color: var(--btn-bg-clr);
+    background: transparent;
+    color: var(--btn-bg-clr);
 }
 button:hover, .button:hover {
-  --btn-bg-clr: var(--btn-bg-clr-focus);
+    --btn-bg-clr: var(--btn-bg-clr-focus);
 }
 .buttons {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 .buttons.left {
-  justify-content: flex-start;
+    justify-content: flex-start;
 }
 .buttons.right {
-  justify-content: flex-end;
+    justify-content: flex-end;
 }
 .buttons.left > button {
-  margin-right: var(--btn-gap);
+    margin-right: var(--btn-gap);
 }
 .buttons.right > button {
-  margin-left: var(--btn-gap);
+    margin-left: var(--btn-gap);
 }
