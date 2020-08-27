@@ -22,9 +22,9 @@
 ## Arrays
 * Use array spreads `...` to clone arrays.
 * Use spreads `...` to convert an iterable object to an array.
-   * If the iterable needs to be mapped, use `Array.from` instead to avoid creating an itermediate array.
+    * If the iterable needs to be mapped, use `Array.from` instead to avoid creating an itermediate array.
 * Use `Array.from` for converting an array-like object to an array.
-   * This is because spreads `...` do not work on non-iterable objects.
+    * This is because spreads `...` do not work on non-iterable objects.
 * Use newlines after open and before close array brackets if an array has multiple lines.
 * Place a space after each comma in single-line arrays.
 * Use trailing commas in multiline arrays.
@@ -72,7 +72,7 @@ function() {}
 * Reduce activity in loops. Accessing a property each iteration is inefficient. Instead assign them first to variables.
 ```javascript
 for (let i = 0, l = arr.length; i < l; i++)
-     // Do stuff
+    // Do stuff
 ```
 
 ## Operators
