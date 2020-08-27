@@ -1,15 +1,15 @@
 .hidden {
-  display: none;
+    display: none;
 }
 .paused {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
 .fadable {
-  transition: opacity 0.5s;
+    transition: opacity 0.5s;
 }
 .fading {
-  opacity: 0;
+    opacity: 0;
 }
 .mirrored {
-  transform: scaleX(-1);
+    transform: scaleX(-1);
 }
