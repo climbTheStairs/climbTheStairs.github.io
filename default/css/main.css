@@ -3,56 +3,56 @@
 @import "states.css";
 /* Vars */
 :root {
-  --bg: black;
-  --font: Ubuntu, sans-serif;
-  --mono: Ubuntu Mono, monospace;
-  --txt-clr: white;
-  --typeface: 18px/20px var(--font);
+    --bg: black;
+    --font: Ubuntu, sans-serif;
+    --mono: Ubuntu Mono, monospace;
+    --txt-clr: white;
+    --typeface: 18px/20px var(--font);
 }
 /* Reset default styles */
 * {
-  background: transparent;
-  border: none;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 *:focus {
-  outline: none;
+    outline: none;
 }
 ::selection {
-  background: #0f0;
-  color: white;
+    background: #0f0;
+    color: white;
 }
 /* Set page to full height */
 html, body {
-  height: 100%;
+    height: 100%;
 }
 /* Tags */
 body {
-  background: var(--bg);
-  color: var(--txt-clr);
-  font: var(--typeface);
-  padding: 10px;
+    background: var(--bg);
+    color: var(--txt-clr);
+    font: var(--typeface);
+    padding: 10px;
 }
 a, .a {
-  color: #0e0;
+    color: #0e0;
 }
 ul {
-  padding-left: 30px;
+    padding-left: 30px;
 }
 textarea, input {
-  background: white;
-  font: 14px var(--mono);
-  resize: none;
+    background: white;
+    font: 14px var(--mono);    
+    resize: none;
 }
 hr, .hr {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 /* Classes */
 .no-scroll {
-	scrollbar-width: none;
+    scrollbar-width: none;
 }
 .no-scroll::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
