@@ -1,6 +1,9 @@
 These are personal files I use for my projects. Please ignore this.
 
 # Changelog
+## 1.5 (2020/08/30)
+* Added style for `table`
+
 ## 1.4 (2020/08/26)
 * Changed tab size from two spaces to four
 * Added `randStr()` function to `js/main.js`
