@@ -1,15 +1,19 @@
 These are personal files I use for my projects. Please ignore this.
 
 # Changelog
-## 1.5 (2020/08/30)
+## 1.5.1 (2020-09-20)
+* Updated `js/style-guide.md`
+* Changed dates in `README.md` to use `YYYY-MM-DD` format instead of `YYYY/MM/DD`
+
+## 1.5 (2020-08-30)
 * Added style for `table`
 
-## 1.4 (2020/08/26)
+## 1.4 (2020-08-26)
 * Changed tab size from two spaces to four
 * Added `randStr()` function to `js/main.js`
 * Added `js/style-guide.md`
 
-## 1.3 (2020/08/20)
+## 1.3 (2020-08-20)
 * Uploaded to `climbthestairs.github.io`
 * Formatted `fonts.css`
 * Created `main.js`
@@ -18,17 +22,17 @@ These are personal files I use for my projects. Please ignore this.
 * Reversed direction of `changelog.txt`
 * Merged `changelog.txt` and `all locations.txt` together into `README.md`
 
-## 1.2 (2020/08/20)
+## 1.2 (2020-08-20)
 * Added styles for `ul`
 
-## 1.1 (2020/08/18)
+## 1.1 (2020-08-18)
 * Added fallback `sans-serif` browser font to `--font`
 * Added `--mono` variable
 * Added styles for `textarea` and `input`
 * Added `.mirrored` state
 * Renamed `default.css` to `main.css`
 
-## 1.0 (2020/08/17)
+## 1.0 (2020-08-17)
 * Merged all different existing versions and standardized
 * Split into imported files `buttons.css` and `states.css`
 * Added usually used fonts (`ubuntu` and `ubuntu mono`) in here
