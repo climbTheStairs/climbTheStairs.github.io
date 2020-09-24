@@ -128,7 +128,8 @@ for (let i = 0, l = arr.length; i < l; i++)
 
 ## Space
 * Never use trailing whitespace.
-* Never use spaces to pad the inside of parentheses, square brackets, or curly braces.
+* Never use spaces to pad the inside of parentheses or square brackets.
+* Use one space to pad the inside of curly braces, unless they are empty.
 * Use one space before the parentheses in control statements.
 * Never use horizontal alignment.
 * Use one space to separate keywords followed by parentheses.
