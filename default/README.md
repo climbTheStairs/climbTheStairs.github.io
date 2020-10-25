@@ -1,12 +1,16 @@
 These are personal files I use for my projects. Please ignore this.
 
 # Changelog
+## 1.6.0
+* Added `$id()`, `head`, `body`, and `fade()` to `js/main.js`
+* Removed styles related to `fade()` from `css/main.css`
+
 ## 1.5.1 (2020-09-20)
 * Updated `js/style-guide.md`
 * Changed dates in `README.md` to use `YYYY-MM-DD` format instead of `YYYY/MM/DD`
 
 ## 1.5 (2020-08-30)
-* Added style for `table`
+* Added styles for `table`
 
 ## 1.4 (2020-08-26)
 * Changed tab size from two spaces to four
