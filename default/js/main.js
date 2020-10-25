@@ -21,3 +21,11 @@ const randStr = (length = 20, charTypes = null) => {
         res.push(chars[~~(Math.random() * chars.length)]);
     return res.join("");
 };
+const fade = (el, callback, speed = 500) => {
+    el.classList.add("fadable", "fading");
+    setTimeout(() => {
+        callback();
+        el.classList.remove("fading");
+        setTimeout(() => el.classList.remove("fadable"), speed);
+    }, speed);
+};
