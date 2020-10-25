@@ -22,10 +22,13 @@ const randStr = (length = 20, charTypes = null) => {
     return res.join("");
 };
 const fade = (el, callback, speed = 500) => {
-    el.classList.add("fadable", "fading");
+    el.style.transition = `opacity ${speed}ms`;
+    el.style.opacity = 0;
     setTimeout(() => {
         callback();
-        el.classList.remove("fading");
-        setTimeout(() => el.classList.remove("fadable"), speed);
+        el.style.opacity = "";
+        setTimeout(() => {
+            el.style.transition = "";
+        }, speed);
     }, speed);
 };
