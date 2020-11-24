@@ -21,14 +21,21 @@ const randStr = (length = 20, charTypes = null) => {
         res.push(chars[~~(Math.random() * chars.length)]);
     return res.join("");
 };
-const fade = (el, callback, speed = 500) => {
-    el.style.transition = `opacity ${speed}ms`;
-    el.style.opacity = 0;
+Element.prototype.CSS = (props) => {
+    Object.assign(this.style, props);
+    return this;
+};
+Element.prototype.fade = (callback, speed = 500) => {
+    this.CSS({
+        transition: `opacity ${speed}ms`,
+        opacity: 0,
+    });
     setTimeout(() => {
         callback();
-        el.style.opacity = "";
+        this.style.opacity = "";
         setTimeout(() => {
-            el.style.transition = "";
+            this.style.transition = "";
         }, speed);
     }, speed);
+    return this;
 };
