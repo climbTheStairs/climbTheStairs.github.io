@@ -1,6 +1,12 @@
 These are personal files I use for my projects. Please ignore this.
 
 # Changelog
+## 1.7.1
+- Renamed `head` and `body` to `$head` and `$body`
+- Made `props` use rest and spread syntax in `create()`
+- Renamed `js/style-guide.md` to `js/style_guide.md`
+- Changed and added some `Naming conventions` in `js/style_guide.md`
+
 ## 1.7.0
 - Changed bullet syntax in `.md` files from `*` to `-`
 - Changed global `fade()` to `Element.prototype.fade`
