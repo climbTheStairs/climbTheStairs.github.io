@@ -136,11 +136,13 @@ for (let i = 0, l = arr.length; i < l; i++)
     - This gives visual distinction between keywords and functions invocations.
 
 ## Naming conventions
-- Use camelCase when naming regular variables.
-- Use PascalCase when naming constructors or classes.
-- Use UPPER_CASE when naming constants.
-    - Otherwise, avoid underscores in identifiers.
-- Acronyms and initialisms that are usually uppercase must be uppercase in code as well.
+- Use camelCase for regular variables.
+- Use PascalCase for constructors or classes.
+- Use UPPER_CASE for constants.
+- Prefix variables with `$` if they hold an `HTMLElement`.
+- Prefix variables with `_` when they are private properties or methods.
+    - If a variable is both an `HTMLElement` and private, prefix it with `_$`.
+- Acronyms and initialisms that are usually uppercase must be uppercase in identifiers as well.
 
 ## Others
 - Use semicolons.
