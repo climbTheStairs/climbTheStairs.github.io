@@ -21,11 +21,11 @@ const randStr = (length = 20, charTypes = null) => {
         res.push(chars[~~(Math.random() * chars.length)]);
     return res.join("");
 };
-Element.prototype.CSS = (props) => {
+Element.prototype.CSS = function(props) {
     Object.assign(this.style, props);
     return this;
 };
-Element.prototype.fade = (callback, speed = 500) => {
+Element.prototype.fade = function(callback, speed = 500) {
     this.CSS({
         transition: `opacity ${speed}ms`,
         opacity: 0,
