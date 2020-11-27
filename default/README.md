@@ -1,6 +1,9 @@
 These are personal files I use for my projects. Please ignore this.
 
 # Changelog
+## 1.7.2
+- Fixed error where `Element.prototype` methods broke due to use of arrow notation
+
 ## 1.7.1
 - Renamed `head` and `body` to `$head` and `$body`
 - Made `props` use rest and spread syntax in `create()`
