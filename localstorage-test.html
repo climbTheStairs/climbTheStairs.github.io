@@ -5,19 +5,15 @@
     <title>localStorage test</title>
 </head>
 <body>
-    <p>empty</p>
+    <p></p>
     <button>Set localStorage</button>
     <script>
 const $ = document.querySelector.bind(document)
-const showResult = () => {
-    if (localStorage.getItem("test"))
-        $("p").textContent = "not empty"
-}
+$("p").textContent = JSON.stringify(localStorage)
 $("button").onclick = () => {
     localStorage.setItem("test", true)
-    showResult()
+    window.location.reload(true)
 }
-showResult()
     </script>
 </body>
 </html>
