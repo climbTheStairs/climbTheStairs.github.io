@@ -1,9 +1,17 @@
 # My JavaScript style guide
 ## Variables
-- Always declare variables before use so as to avoid accidental globals.
+- Always declare variables before use to avoid accidental globals.
 - Use `const` to declare variables, unless it must be reassigned; then, use `let`. Never use `var`.
 - Use one `const` or `let` per variable definition; never swap `;` for `,`.
-    - The only exception is defining the index and length within `for` loops.
+    - [#Iterators](The only exception is defining the index and length within `for` loops.)
+```javascript
+// bad
+const foo = 1, bar = 2;
+
+// good
+const foo = 1;
+const bar = 2;
+```
 - Group all `const`s and then all `let`s.
 - Never save references to `this`. Use instead arrow functions or `bind`.
 - Use explanatory variables.
@@ -13,11 +21,28 @@
 ## Objects
 - Use computed property names when creating objects with dynamic property names.
 - Use object method shorthand.
+```javascript
+// bad
+const obj = { foo: foo };
+
+// good
+const obj = { foo };
+```
 - Use property value shorthand.
 - Group your shorthand properties at the beginning of your object declaration.
 - Only quote properties that are invalid identifiers.
 - Use trailing commas on multiline objects.
-- Single-line objects are forbidden, unless it contains only spreads `...`, property shorthands, or one property.
+```javascript
+// bad
+const obj = {
+    foo: 1
+};
+
+// good
+const obj = {
+    foo: 1,
+};
+```
 
 ## Arrays
 - Use array spreads `...` to clone arrays.
@@ -25,7 +50,6 @@
     - If the iterable needs to be mapped, use `Array.from` instead to avoid creating an itermediate array.
 - Use `Array.from` for converting an array-like object to an array.
     - This is because spreads `...` do not work on non-iterable objects.
-- Use newlines after open and before close array brackets if an array has multiple lines.
 - Place a space after each comma in single-line arrays.
 - Use trailing commas in multiline arrays.
 
@@ -37,13 +61,6 @@
 
 ## Functions
 - Use anonymous function expressions assigned to a `const` variable instead of function declarations.
-- Wrap everything in an IIFE.
-- Do not wrap IIFEs in parentheses. This will result in a syntax error for arrow functions.
-```javascript
-(() => {
-    // Do stuff
-})();
-```
 - Never use `arguments`, opt to use rest syntax `...` instead.
 - Use default parameter syntax.
 - Default parameters must not have side effects.
@@ -51,9 +68,20 @@
 - When calling a function, arguments, whether single-line or multiline, should be formatted as an array.
 - Never place a space before function parentheses.
 ```javascript
-function() {}
+// bad
+const fn = function () {};
+
+// good
+const fn = function() {};
 ```
 - Place one space before function braces.
+```javascript
+// bad
+const fn = function(){};
+
+// good
+const fn = function() {};
+```
 
 ## Arrow functions
 - Use arrow function notation when no bindings are needed.
@@ -68,8 +96,8 @@ function() {}
 - Classes have a default constructor if one is not specified. Avoid unnecessary constructor functions.
 
 ## Iterators
-- Use built-in functions instead of loops like `for-in` or `for-of`.
-- Reduce activity in loops. Accessing a property each iteration is inefficient. Instead assign them first to variables.
+- Use built-in methods instead of loops like `for-in` or `for-of`.
+- Reduce activity in loops, as accessing a property each iteration is inefficient. Instead, assign them first to variables.
 ```javascript
 for (let i = 0, l = arr.length; i < l; i++)
     // Do stuff
@@ -145,13 +173,15 @@ for (let i = 0, l = arr.length; i < l; i++)
 - Acronyms and initialisms that are usually uppercase must be uppercase in identifiers as well.
 
 ## Others
-- Use semicolons.
+- Use semicolons. Or not???
 - Use literal syntax instead of constructors.
 - Use `"use strict"`.
 - Use `Number.isNaN` instead of `isNaN`.
 - Use `Number.isFinite` instead of `isFinite`.
-- The use of jQuery and other libraries is discouraged.
+- The use of jQuery and other unnecessary libraries is discouraged.
 
 ## Sources of influence
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
-- [MediaWiki Javascript coding conventions](https://mediawiki.org/wiki/Manual:Coding_conventions/JavaScript)
+- [MediaWiki's JavaScript coding conventions](https://mediawiki.org/wiki/Manual:Coding_conventions/JavaScript)
+- [*Clean Code* by Robert C. Martin](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29)
+- ["JavaScript Performance" on W3Schools](https://www.w3schools.com/js/js_performance.asp)
