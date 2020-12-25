@@ -141,7 +141,7 @@ for (let i = 0, l = arr.length; i < l; i++)
 - Use `// TODO:` to annotate solutions to prblems.
 
 ## Indentation
-- Indent with soft tabs (spaces ` `) of four characters.
+- Indent with soft tabs (spaces) of four characters (`    `).
     - Soft tabs ensure the code always appears the same.
     - Four spaces makes code more readable and discourages excessive nesting.
 - Use indentation when chaining methods, and they all must use a leading dot.
@@ -150,7 +150,7 @@ for (let i = 0, l = arr.length; i < l; i++)
 - Never leave blank lines.
 - Lines of code must not exceed eighty characters.
 - Comments and long strings must not exceed seventy-two characters.
-- Never use newlines after an `=` assignment. If the assignment is too long, surround the value in parentheses.
+- Never end a line with an `=` assignment. If the line is too long, surround the assigned value in parentheses.
 - Function names and control statements must not be on the same line as their body.
 - Never use spaces between functions and their invocations.
 
