@@ -3,7 +3,7 @@
 - Always declare variables before use to avoid accidental globals.
 - Use `const` to declare variables, unless it must be reassigned; then, use `let`. Never use `var`.
 - Use one `const` or `let` per variable definition; never swap `;` for `,`.
-    - [#Iterators](The only exception is defining the index and length within `for` loops.)
+    - [The only exception is defining the index and length within `for` loops.](#Iterators)
 ```javascript
 // bad
 const foo = 1, bar = 2;
