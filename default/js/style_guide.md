@@ -1,187 +1,968 @@
 # My JavaScript style guide
-## Variables
-- Always declare variables before use to avoid accidental globals.
-- Use `const` to declare variables, unless it must be reassigned; then, use `let`. Never use `var`.
-- Use one `const` or `let` per variable definition; never swap `;` for `,`.
-    - [The only exception is defining the index and length within `for` loops.](#iterators)
-```javascript
-// bad
-const foo = 1, bar = 2;
 
-// good
-const foo = 1;
-const bar = 2;
-```
+## Variables
+
+- Always declare variables before use to avoid accidental globals.
+
+- Use `const` to declare variables, unless it must be reassigned; then, use `let`. Never use `var`.
+
+    ```javascript
+    // avoid
+    var x = 1
+    var y = 2
+    
+    // okay
+    const x = 1
+    let y = 2
+    ```
+    
+- Use one `const` or `let` per variable definition; never combine definitions with `,` ([outside of control statements](#iterators)).
+    
+    ```javascript
+    // avoid
+    const x = 1, y = 2
+    
+    // okay
+    const x = 1
+    const y = 2
+    ```
+
 - Group all `const`s and then all `let`s.
-- Never save references to `this`. Use instead arrow functions or `bind`.
+
+    ```javascript
+    // avoid
+    let x = 1
+    const y = 2
+    let z = 3
+    
+    // okay
+    const y = 2
+    let x = 1
+    let z = 3
+    ```
+
+- Never save references to `this`. Use instead arrow functions or `Function.prototype.bind()`.
+    
+    ```javascript
+    // avoid
+    const that = this
+    fn(function() {
+        that.method()
+    })
+    
+    // okay
+    fn(() => {
+        this.method()
+    })
+    fn(function() {
+        this.method()
+    }.bind(this))
+
 - Use explanatory variables.
+
 - Use object and array destructuring.
-- Unused variables are forbidden.
+
+    ```javascript
+    // avoid
+    const x = obj.x
+    const y = arr[0]
+    
+    // okay
+    const { x } = obj
+    const [y] = arr
+    ```
+    
+- All declared or defined variables must be used; unused variables are forbidden.
 
 ## Objects
+
 - Use computed property names when creating objects with dynamic property names.
+
+    > Why? They allow all the properties of an object to be defined in one place.
+    
+    ```javascript
+    // avoid
+    const obj = {
+        x: 1,
+    }
+    obj[key] = 2
+    
+    // okay
+    const obj = {
+        x: 1,
+        [key]: 2,
+    }
+    ```
+
 - Use object method shorthand.
-```javascript
-// bad
-const obj = { foo: foo };
 
-// good
-const obj = { foo };
-```
+    ```javascript
+    // avoid
+    const obj = {
+        method: function() {},
+    }
+    
+    // okay
+    const obj = {
+        method() {},
+    }
+    ```
+
 - Use property value shorthand.
-- Group your shorthand properties at the beginning of your object declaration.
-- Only quote properties that are invalid identifiers.
-- Use trailing commas on multiline objects.
-```javascript
-// bad
-const obj = {
-    foo: 1
-};
+    
+    > Why? It is shorter and more descriptive.
 
-// good
-const obj = {
-    foo: 1,
-};
-```
+    ```javascript
+    // avoid
+    const obj = { x: x, y: y }
+    
+    // okay
+    const obj = { x, y }
+    ```
+
+- Only quote properties that are invalid identifiers.
+
+    ```javascript
+    // avoid
+    const obj = {
+        "x": 1,
+        "#": 2,
+    }
+    
+    // okay
+    const obj = {
+        x: 1,
+        "#": 2,
+    }
+    ```
+
+- Use trailing commas on multiline objects.
+
+    ```javascript
+    // avoid
+    const obj = {
+        x: 1
+    }
+    
+    // okay
+    const obj = {
+        x: 1,
+    }
+    ```
 
 ## Arrays
-- Use array spreads `...` to clone arrays.
-- Use spreads `...` to convert an iterable object to an array.
-    - If the iterable needs to be mapped, use `Array.from` instead to avoid creating an itermediate array.
-- Use `Array.from` for converting an array-like object to an array.
-    - This is because spreads `...` do not work on non-iterable objects.
+- Use spread to clone arrays.
+
+    ```javascript
+    // avoid
+    const newArr = arr.slice()
+    
+    // okay
+    const newArr = [...arr]
+    ```
+
+- Use spread to convert an iterable object to an array.
+
+    ```javascript
+    const obj = document.querySelectorAll("*")
+    
+    // avoid
+    const arr = Array.prototype.slice.call(obj)
+    const arr = Array.from(obj)
+    
+    // okay
+    const arr = [...obj]
+    ```
+
+- Use `Array.prototype.from()` instead of spread for mapping over an iterable object.
+
+    > Why? It avoids creating an intermediate array.
+    
+    ```javascript
+    const obj = document.querySelectorAll("*")
+    
+    // avoid
+    const arr = [...obj].map(processArr)
+    
+    // okay
+    const arr = Array.from(obj, processArr)
+    ```
+    
+- Use `Array.prototype.from()` for converting an array-like object to an array.
+    
+    > Why? Spreads do not work on non-iterable objects.
+
+    ```javascript
+    const obj = { 0: 1, 1: 2, 2: 3 }
+    
+    // avoid
+    const arr = Array.prototype.slice.call(obj)
+    
+    // throws error
+    const arr = [...obj]
+    
+    // okay
+    const arr = Array.from(obj)
+    
 - Place a space after each comma in single-line arrays.
+
+    ```javascript
+    // avoid
+    const arr = [1,2,3]
+    
+    // okay
+    const arr = [1, 2, 3]
+    ```
+
 - Use trailing commas in multiline arrays.
 
+    ```javascript
+    // avoid
+    const arr = [
+        1,
+        2, 
+        3
+    ]
+    
+    // okay
+    const arr= [
+        1,
+        2,
+        3,
+    ]
+    ```
+
 ## Strings
+
 - Use double quotes `""` for strings instead of single quotes `''`.
-- Strings that exceed seventy-two characters must be written across multiple lines using string concatenation.
+
+    ```javascript
+    // avoid
+    const str = 'string'
+    
+    // okay
+    const str = "string"
+    ```
+
 - When programmatically building up strings, use template strings when that is clearer.
+
+    ```javascript
+    // avoid
+    const str = "text " + x + " more text " + y + "!!!1!1"
+    
+    // okay
+    const str = `text ${x} more text ${y}!!!1!1`
+    ```
+    
 - Use template strings to avoid escaping.
 
+    ```javascript
+    // avoid
+    const str = "<div class=\"box\"></div>"
+    
+    // okay
+    const str = `<div class="box"></div>`
+    ```
+
 ## Functions
+
 - Use anonymous function expressions assigned to a `const` variable instead of function declarations.
-- Never use `arguments`, opt to use rest syntax `...` instead.
+
+    ```javascript
+    // avoid
+    function fn() {}
+    
+    // okay
+    const fn = function() {}
+    ```
+
+- Use arrow notation when no `this` bindings are needed.
+
+    ```javascript
+    // avoid
+    const fn = function() {}
+    
+    // okay
+    const fn = () => {}
+    ```
+
+- In arrow functions consist of a single, *short* statement, braces may be omitted to use the implicit return.
+
+    ```javascript
+    // avoid
+    const fn = () => {
+        fn()
+    }
+    
+    // okay
+    const fn = () => fn()
+    ```
+    
+- Never use `arguments`, use rest syntax instead.
+    
+    > Why? `arguments` is not an array, and it does not exist inside arrow functions.
+
+    ```javascript
+    // avoid
+    const fn = function() {
+        return arguments
+    }
+    
+    // okay
+    const fn = (...args) => args
+    ```
+
 - Use default parameter syntax.
-- Default parameters must not have side effects.
-- Use spreads `...` to call variadic functions.
-- When calling a function, arguments, whether single-line or multiline, should be formatted as an array.
-- Never place a space before function parentheses.
-```javascript
-// bad
-const fn = function () {};
 
-// good
-const fn = function() {};
-```
-- Place one space before function braces.
-```javascript
-// bad
-const fn = function(){};
+    ```javascript
+    // avoid
+    const fn = (x) => {
+        x = x || 1
+    }
+    
+    // okay
+    const fn = (x = 1) => {}
+    ```
+    
+- Avoid side effects with default parameters.
 
-// good
-const fn = function() {};
-```
+    > Why? They are confusing to reason about.
 
-## Arrow functions
-- Use arrow function notation when no bindings are needed.
-- If the function body consists of a single statement spanning only one line, omit the braces and use the implicit return. Otherwise, keep the braces and use a return statement.
-- Always include parentheses around arguments for consistency.
+    ```javascript
+    // avoid
+    let y = 0
+    const fn = (x = ++y) => {}
+    ```
+    
+- Use spread to call variadic functions.
+
+    > Why? It is much cleaner and simpler, and `new` does not easily work with `Function.prototype.apply()`.
+
+    ```javascript
+    // avoid
+    console.log.apply(console, args)
+    const d = new (Function.prototype.bind.apply(Date, args))
+
+    // okay
+    console.log(...args)
+    const d = new Date(...args)
+    ```
+
+- When calling a function, arguments (both single-line and multiline) should be [formatted the same as an array](#arrays).
+
+    ```javascript
+    // avoid
+    fn(x,y,z)
+    fn(
+        x, y, y,
+    )
+
+    // okay
+    fn(x, y, z)
+    fn(
+        x,
+        y,
+        z,
+    )
+    ```
+
+- In arrow functions, always include parentheses around arguments for consistency.
+
+    ```javascript
+    // avoid
+    const fn = x => {}
+    
+    // okay
+    const fn = (x) => {}
+    ```
 
 ## Classes and constructors
+
 - Use anonymous class expressions assigned to a `const` variable instead of class declarations.
+
+    ```javascript
+    // avoid
+    class C {}
+    
+    // okay
+    const C = class {}
+    ```
+
 - Always use `class`. Avoid manipulating `prototype` directly.
+
+    ```javascript
+    // avoid
+    const C = function() {}
+    C.prototype.method = function() {}
+    
+    // okay
+    const C = class {
+        method() {}
+    }
+    ```
+    
 - Use extends for inheritance.
-- Methods can return `this` to help with method chaining.
+
+    ```javascript
+    const C = class extends D {}
+    ```
+    
+- Methods can return `this` to allow method chaining.
+
+    ```javascript
+    const C = {
+        method() {
+            // do stuff
+            return this
+        }
+    }
+    ```
+    
 - Classes have a default constructor if one is not specified. Avoid unnecessary constructor functions.
 
 ## Iterators
+
 - Use built-in methods instead of loops like `for-in` or `for-of`.
-- Reduce activity in loops, as accessing a property each iteration is inefficient. Instead, assign them first to variables.
-```javascript
-for (let i = 0, l = arr.length; i < l; i++)
-    // Do stuff
-```
+
+    ```javascript
+    // avoid
+    for (key in obj)
+        // do stuff
+    for (x of arr)
+        // do stuff
+    
+    // okay
+    Object.keys(obj).forEach((key) => {
+        // do stuff
+    })
+    arr.forEach((x) => {
+        // do stuff
+    })
+    ```
+    
+- Reduce activity in loops. Assign properties that are accessed each iteration to variables.
+    
+    > Why? Accessing a property each iteration can be inefficient.
+    
+    ```javascript
+    // avoid
+    for (let i = 0; i < arr.length; i++)
+        // do stuff
+        
+    // okay
+    for (let i = 0, l = arr.length; i < l; i++)
+        // do stuff
+    ```
 
 ## Operators
-- Insert one space between operators and expressions.
+
+- Separate binary operators from expressions with a space.
+
+    ```javascript
+    // avoid
+    const x = 1+2
+    
+    // okay
+    const x = 1 + 2
+    ```
+    
 - Use `===` and `!==` and never `==` and `!=`.
+
+    ```javascript
+    // avoid
+    if (x == 1 && y != 2)
+        // do stuff
+    
+    // okay
+    if (x === 1 && y !== 2)
+        // do stuff
+    ```
+
 - Avoid Yoda conditionals.
+
+    ```javascript
+    // avoid
+    if (1 === x)
+        // do stuff
+    
+    // okay
+    if (x === 1)
+        // do stuff
+    ```
+    
 - Use shortcuts in control statements, as expressions will be coerced into booleans.
+
+    ```javascript
+    // avoid
+    if (arr.length !== 0)
+        // do stuff
+    
+    // okay
+    if (arr.length)
+        // do stuff
+    ```
+    
 - When mixing operators, enclose them in parentheses if that improves clarity.
-- When an expression with logical operators span multiple lines, the logical operators must end lines.
-```javascript
-(
-    true === false ||
-    (arg[0] && arg[1]) ||
-    arr.length
-)
-```
-- Avoid unclear or nested ternaries.
-- Use exponential operator `**` instead of `Math.pow`.
+
+    ```javascript
+    // avoid
+    const condition = fn(x) + y * 10 > z || x && arr.length
+    
+    // okay
+    const condition = (fn(x) + (y * 10) > z) || (x && arr.length)
+
+- When a multiline expression with logical operators, the operators must end lines.
+
+    ```javascript
+    // okay
+    if (
+        condition1 ||
+        (x > y && condition2) ||
+        condition3
+    )
+        // Do stuff
+    ```
+    
+- Avoid nested or unclear ternaries.
+
+- Spread ternaries on multiple lines if that improves clarity.
+
+    ```javascript
+    // okay
+    const x = condition
+        ? valueIfTrue
+        : valueIfFalse
+    ```
+    
+- Use exponential operator `**` instead of `Math.pow()`.
+    
+    ```javascript
+    // avoid
+    const x = Math.pow(1, 2)
+    
+    // okay
+    const x = 1 ** 2
+    ```
 
 ## Blocks
+
 - Never use braces or create multiline blocks with control statements.
+
+    ```javascript
+    // avoid
+    if (condition) {
+        // do stuff
+        // do more stuff
+    }
+    while (condition) {
+        // do stuff
+        // do more stuff
+    }
+    
+    // okay
+    const fn = () => {
+        // do stuff
+        // do more stuff
+    }
+    if (condition)
+        fn()
+    while (condition)
+        fn()
+    ```
+    
 - Never use `switch` statements.
-- If an `if` block executes a `return` statement (or throws and error), the subsequent `else` block is unnecessary.
-- A `return` in an `else if` block following an `if` block that contains a `return` must be separated into multiple `if` blocks.
-- Do not use short circuits in place of conditionals.
+
+    ```javascript
+    // avoid
+    switch (x) {
+        case "succ":
+            // do stuff
+            break
+        case "err":
+            // do stuff
+            break
+    }
+    
+    // okay
+    const obj = {
+        succ() {
+            // do stuff
+        },
+        err() {
+            // do stuff
+        },
+    }
+    obj[x]()
+    ```
+    
+- If an `if` block returns or throws an error, do not use subsequent `else` or `else if` blocks.
+
+    ```javascript
+    // avoid
+    if (condition1)
+        return 1
+    else if (condition2)
+        throw new Error()
+    else
+        fn()
+    
+    // okay
+    if (condition1)
+        return 1
+    if (condition2)
+        throw new Error()
+    fn()
+    ```
+    
+- The use of short circuits in place of conditionals is discouraged.
+
+    ```javascript
+    // discouraged
+    condition && fn()
+    
+    // okay
+    if (condition)
+        fn()
+    ```
 
 ## Comments
-- Use `/** ... */` for multiline comments
-```javascript
-/**
- * Here is a comment and here
- * is a uh what?
- */
-```
-- Use `//` for single-line comments. Always place single-line comments on a separate line above the subject of the comment.
-- Start all comments with a space.
-- Use `// FIXME:` to annotate problems.
-- Use `// TODO:` to annotate solutions to prblems.
 
-## Indentation
-- Indent with soft tabs (spaces) of four characters (`    `).
-    - Soft tabs ensure the code always appears the same.
-    - Four spaces makes code more readable and discourages excessive nesting.
-- Use indentation when chaining methods, and they all must use a leading dot.
+- Use `/** ... */` for multiline comments
+
+    ```javascript
+    // avoid
+    /* This is a comment */
+    /* Here is a comment and here
+    is a uh what */
+    
+    // okay
+    /**
+     * Here is a comment and here
+     * is a uh what?
+     */
+    ```
+    
+- Use `//` for single-line comments. Always place single-line comments on a separate line above the subject of the comment.
+
+    ```javascript
+    // avoid
+    fn() // this is a comment
+    
+    // okay
+    // this is a comment
+    fn()
+    ```
+    
+- Start all comments with a space.
+
+    ```javascript
+    // avoid
+    //this is a commnet
+    
+    // okay
+    // this is a comment
+    ```
+    
+- Use `// FIXME:` to annotate problems.
+
+- Use `// TODO:` to annotate solutions to problems.
 
 ## Lines
-- Never leave blank lines.
-- Lines of code must not exceed eighty characters.
-- Comments and long strings must not exceed seventy-two characters.
+
+- Related code may be grouped with one blank line. Never leave multiple blank lines together.
+
+    ```javascript
+    // avoid
+    "use strict"
+    
+    
+    const x = 1
+    fn(x)
+    
+    // okay
+    "use strict"
+    
+    const x = 1
+    fn(x)
+    ```
+
+- Lines of code *should* be kept short and *must not* exceed eighty characters.
+
+- Comments and strings must not cause their lines to exceed seventy-two characters. If they do, they must be broken up into multiple lines.
+
+    ```javascript
+    // avoid
+    /**
+     * Pretend this comment is really really long
+     */
+    const str = "pretend this string is really really long"
+    
+    // okay
+    /**
+     * Pretend this comment is
+     * really really
+     * long
+     */
+    const str = (
+        "pretend this string is" +
+        "really really" +
+        "long"
+    )
+    ```
+
 - Never end a line with an `=` assignment. If the line is too long, surround the assigned value in parentheses.
-- Function names and control statements must not be on the same line as their body.
-- Never use spaces between functions and their invocations.
+
+    ```javascript
+    // avoid
+    const str =
+        "a long line"
+    
+    // okay
+    const str = (
+        "a long line"
+    )
+    ```
+
+- Control statements must not be on the same line as their body.
+
+    ```javascript
+    // avoid
+    if (condition) // do something
+    
+    // okay
+    if (condition)
+        // do something
+    ```
+
+- Short functions *may* be on the same line as their body.
+
+    ```javascript
+    // okay
+    const fn = (x) => { console.log(x) }
+    ```
 
 ## Space
-- Never use trailing whitespace.
+
+- Indent with soft tabs (spaces) of size four.
+
+    > Why? Soft tabs ensure the code always appears the same, and four spaces makes the code more readable and discourages excessive nesting.
+    
+    ```javascript
+    (() => {
+        fn(() => {
+            if (condition)
+                console.log(
+                    "How far do you have to nest?",
+                )
+        })
+    })()
+    ```
+
+- Never have trailing whitespace.
+
 - Never use spaces to pad the inside of parentheses or square brackets.
+
+    ```javascript
+    // avoid
+    const arr = [ 1, 2, 3 ]
+    fn( x )
+    // okay
+    const arr = [1, 2, 3]
+    fn(x)
+    ```
+
 - Use one space to pad the inside of curly braces, unless they are empty.
-- Use one space before the parentheses in control statements.
+
+    ```javascript
+    // avoid
+    const obj1 = {x: 1, y: 2}
+    const obj2 = { }
+    
+    // okay
+    const obj1 = { x: 1, y: 2 }
+    const obj2 = {}
+    ```
+
 - Never use horizontal alignment.
-- Use one space to separate keywords followed by parentheses.
-    - This gives visual distinction between keywords and functions invocations.
+
+    > Why? It's difficult to manage as the code changes.
+
+    ```javascript
+    // avoid
+    const short        = { x: 1,     y: 2    }
+    const veryLongName = { x: 12345, y: 6789 }
+    
+    // okay
+    const short = { x: 1, y: 2 }
+    const veryLongName = { x: 12345, y: 6789 }
+    ```
+
+- Place one space between the keyword and opening parenthesis in control statements.
+
+    > Why? This visually distinguishes keywords from function invocations.
+
+    ```javascript
+    // avoid
+    if(condition)
+        // Do stuff
+    
+    // okay
+    if (condition)
+        // Do stuff
+    ```
+
+- Never place a space between the function name and opening parenthesis in function expressions and invocations.
+
+    > Why? This visually distinguishes functions from keywords.
+
+    ```javascript
+    // avoid
+    const fn = function () {}
+    fn ()
+
+    // okay
+    const fn = function() {}
+    fn()
+    ```
+
+- Place one space before function braces.
+
+    ```javascript
+    // avoid
+    const fn = function(){}
+    
+    // okay
+    const fn = function() {}
+    ```
 
 ## Naming conventions
-- Use camelCase for regular variables.
-- Use PascalCase for constructors or classes.
-- Use UPPER_CASE for constants.
-- Prefix variables with `$` if they hold an `HTMLElement`.
-- Prefix variables with `_` when they are private properties or methods.
-    - If a variable is both an `HTMLElement` and private, prefix it with `_$`.
-- Acronyms and initialisms that are usually uppercase must be uppercase in identifiers as well.
+
+- Use camel case for regular variables.
+
+    ```javascript
+    // okay
+    const varName = 1
+    let anotherLongerVarName = 2
+    ```
+
+- Use Pascal case for constructors or classes.
+
+    ```javascript
+    // okay
+    const VarName = class {}
+    let AnotherLongerVarName = {}
+    ```
+
+- Use uppercase for constants. Properties within constants must be written normally (in camel case).
+
+    ```javascript
+    // okay
+    const VAR_NAME = "constant value"
+    const ANOTHER_LONGER_VAR_NAME = { property: 1 }
+    ```
+
+- Prefix variables that are private properties or methods with `_`.
+
+    ```javascript
+    // okay
+    const _varName = "secret"
+    ```
+
+- Prefix variables that hold an `HTMLElement` with `$`.
+
+    ```javascript
+    // okay
+    const $varName = document.querySelector(".box")
+    ```
+
+- Prefix variabies that both are private and hold an `HTMLElement` with `_$`.
+
+    ```javascript
+    // okay
+    const _$varName = document.querySelector(".secret")
+    ```
+
+- Acronyms and initialisms should be in the same case in identifiers as they are normally.
+
+    ```javascript
+    // avoid
+    const customerId = 1234
+    const sectionID = document.querySelector("section").id
+    const elementCss = { color: "red" }
+    
+    // okay
+    // "ID", meaning identification, is usually uppercase
+    const customerID = 1234
+    // The HTML attribute "id" is lowercase
+    const sectionId = document.querySelector("section").id
+    // The acronym "CSS" is always uppercase
+    const elementCSS = { color: "red }
+    ```
 
 ## Others
-- Use semicolons. Or not???
+- Never end lines with semicolons.
+
+    ```javascript
+    // avoid
+    console.log();
+
+    // okay
+    console.log()
+
+- Never start a line with `[`, `(`, `` ` ``, `+`, `*`, `/`, `-`, `,`, or `.`.
+
+    > Why? They may cause unexpected behavior when semicolons are omitted.
+    
+    ```javascript
+    // avoid
+    (() => {
+        // do stuff
+    })()
+    
+    // okay
+    ;(() => {
+        // do stuff
+    })()
+    ```
+    
 - Use literal syntax instead of constructors.
+
+    ```javascript
+    // avoid
+    const str = new String()
+    const arr = new Array()
+    
+    // okay
+    const str = ""
+    const arr = []
+    ```
+
 - Use `"use strict"`.
-- Use `Number.isNaN` instead of `isNaN`.
-- Use `Number.isFinite` instead of `isFinite`.
-- The use of jQuery and other unnecessary libraries is discouraged.
+
+    ```javascript
+    "use strict"
+    
+    // do stuff
+    ```
+
+- Use `Number.isNaN` and `Number.isFinite` instead of `isNaN` and `isFinite`.
+
+    ```javascript
+    // avoid
+    const condition1 = isNaN(x)
+    const condition2 = isFinite(x)
+    
+    // okay
+    x = window.parseInt(x)
+    const condition1 = Number.isNaN(x)
+    const condition2 = Number.isFinite(x)
+    ```
+
+- Do not use jQuery and other unnecessary libraries.
 
 ## Sources of influence
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [MediaWiki's JavaScript coding conventions](https://mediawiki.org/wiki/Manual:Coding_conventions/JavaScript)
 - [*Clean Code* by Robert C. Martin](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29)
 - ["JavaScript Performance" on W3Schools](https://www.w3schools.com/js/js_performance.asp)
+- [JavaScript Standard Style](https://standardjs.com/rules.html)
