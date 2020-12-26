@@ -1,6 +1,9 @@
 These are personal files I use for my projects. Please ignore this.
 
 # Changelog
+## 1.8.0
+- Refactored `js/style_guide.md`
+
 ## 1.7.4
 - Fixed error in `js/style_guide.md`
 
