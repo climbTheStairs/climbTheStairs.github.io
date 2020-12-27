@@ -235,11 +235,12 @@
 
 ## Strings
 
-- Use double quotes `""` for strings instead of single quotes `''`.
+- Use double quotes `""` for strings instead of single quotes `''` (and instead of templates when they are unnecessary).
 
     ```javascript
     // avoid
     const str = 'string'
+    const str = `string`
     
     // okay
     const str = "string"
@@ -772,7 +773,17 @@
     fn(x)
     ```
 
-- Use one space to pad the inside of curly braces, unless they are empty.
+- Never use spaces to pad the inside of curly braces in template literals.
+
+    ```javascript
+    // avoid
+    const str = `thank you, ${ user }`
+    
+    // okay
+    const str = `thank you, ${user}`
+    ```
+    
+- Use one space to pad the inside of curly braces in objects and functions, unless they are empty.
 
     ```javascript
     // avoid
