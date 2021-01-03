@@ -921,6 +921,7 @@
 
     // okay
     console.log()
+    ```
 
 - Never start a line with `[`, `(`, `` ` ``, `+`, `*`, `/`, `-`, `,`, or `.`.
 
