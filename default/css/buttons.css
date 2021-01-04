@@ -17,6 +17,7 @@ button,
     color: var(--btn-txt-clr);
     cursor: pointer;
     font: var(--btn-typeface);
+    margin: 2px;
     padding: 7px 10px;
     text-transform: uppercase;
     transition: 0.3s;
