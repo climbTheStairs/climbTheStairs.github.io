@@ -1,6 +1,10 @@
 These are personal files I use for my projects. Please ignore this.
 
 # Changelog
+## 1.9.0
+- Restructured CSS stylesheets, `@import`ing them all in separate files
+- Fixed syntax errors in `js/style_guide.md`
+
 ## 1.8.0
 - Refactored `js/style_guide.md`
 
