@@ -1,3 +1,7 @@
+/**
+ * Style buttons and button-like elements
+ */
+
 :root {
     --btn-bg-clr: turquoise;
     --btn-bg-clr-focus: darkcyan;
@@ -5,7 +9,9 @@
     --btn-txt-clr: black;
     --btn-typeface: bold 10px/16px var(--font);
 }
-button, .button {
+
+button,
+.button {
     background: var(--btn-bg-clr);
     border: 1px solid var(--btn-bg-clr);
     color: var(--btn-txt-clr);
@@ -18,13 +24,16 @@ button, .button {
     align-items: center;
     justify-content: center;
 }
-button.secondary, .button.secondary {
+button.secondary,
+.button.secondary {
     background: transparent;
     color: var(--btn-bg-clr);
 }
-button:hover, .button:hover {
+button:hover,
+.button:hover {
     --btn-bg-clr: var(--btn-bg-clr-focus);
 }
+
 .buttons {
     display: flex;
     align-items: center;
@@ -35,9 +44,11 @@ button:hover, .button:hover {
 .buttons.right {
     justify-content: flex-end;
 }
-.buttons.left > button {
+.buttons.left > button,
+.buttons.left > .button {
     margin-right: var(--btn-gap);
 }
+.buttons.right > button,
 .buttons.right > button {
     margin-left: var(--btn-gap);
 }
