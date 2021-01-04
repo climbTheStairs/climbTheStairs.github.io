@@ -33,8 +33,9 @@ table {
 }
 
 fieldset {
-    padding: revert;
+    display: inline-block;
     border: var(--border);
+    padding: revert;
 }
 legend {
     padding-inline: 2px;
