@@ -15,11 +15,11 @@ body {
 }
 #warning p {
     color: yellow;
-    font: bold x-large serif;
+    font: bold x-large "Times New Roman", serif;
 }
 #warning h2 {
     color: black;
-    font: bold xx-large sans-serif;
+    font: bold xx-large "Arial", sans-serif;
     text-align: center;
 }
 #warning strong {
