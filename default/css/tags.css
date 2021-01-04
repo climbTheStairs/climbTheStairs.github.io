@@ -31,3 +31,13 @@ hr {
 table {
     border-collapse: collapse;
 }
+
+fieldset {
+    margin-inline: 2px;
+    padding: 0.35em 0.75em 0.625em;
+    border: 1px solid white;
+    min-inline-size: min-content;
+}
+legend {
+    padding-inline: 2px;
+}
