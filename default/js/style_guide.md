@@ -57,6 +57,7 @@
     fn(function() {
         this.method()
     }.bind(this))
+    ```
 
 - Use explanatory variables.
 
@@ -204,6 +205,7 @@
     
     // okay
     const arr = Array.from(obj)
+    ```
     
 - Place a space after each comma in single-line arrays.
 
@@ -512,6 +514,7 @@
     
     // okay
     const condition = (fn(x) + (y * 10) > z) || (x && arr.length)
+    ```
 
 - When a multiline expression with logical operators, the operators must end lines.
 
