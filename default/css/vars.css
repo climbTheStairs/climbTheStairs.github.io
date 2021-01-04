@@ -5,6 +5,7 @@
 :root {
     --bg: black;
     --font: Ubuntu, sans-serif;
+    --link-clr: #0e0;
     --mono: Ubuntu Mono, monospace;
     --txt-clr: white;
     --typeface: 18px/20px var(--font);
