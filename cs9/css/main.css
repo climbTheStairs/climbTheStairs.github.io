@@ -1,0 +1,42 @@
+:root {
+    --link-clr: blue;
+}
+body {
+    padding: 0;
+}
+#warning {
+    background: red;
+    box-shadow: 5px 5px 10px yellow;
+    margin: 60px;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#warning p {
+    color: yellow;
+    font: bold x-large serif;
+}
+#warning h2 {
+    color: black;
+    font: bold xx-large sans-serif;
+    text-align: center;
+}
+#warning strong {
+    font-size: xx-large;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+#warning-close {
+    margin: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+iframe {
+    border: 30px solid red;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
