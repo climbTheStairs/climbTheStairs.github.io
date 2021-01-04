@@ -4,6 +4,8 @@
 
 :root {
     --bg: black;
+    --border: 1px solid var(--border-clr);
+    --border-clr: white;
     --font: Ubuntu, sans-serif;
     --link-clr: #0e0;
     --mono: Ubuntu Mono, monospace;
