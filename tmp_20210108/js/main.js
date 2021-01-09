@@ -9,8 +9,12 @@
     const a = $("#str-a").value
     const b = $("#str-b").value
 
-    for (let i = 0, l = a.length; i < l; i++)
-        if (a.shift(i) === b)
-            return true
-    return false
+    const isShiftable = (a, b) => {
+        for (let i = 0, l = a.length; i < l; i++)
+            if (a.shift(i) === b)
+                return true
+        return false
+    }
+    
+    $("#res").textContent = isShiftable(a, b)
 })()
