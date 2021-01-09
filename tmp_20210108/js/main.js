@@ -5,16 +5,18 @@
         i += 1
         return this.slice(i) + this.slice(0, i)
     }
-    
-    const a = $("#str-a").value
-    const b = $("#str-b").value
 
-    const isShiftable = (a, b) => {
+    const $strA = $("#str-a")
+    const $strB = $("#str-b")
+    
+    const isShiftable = () => {
+        const a = $strA.value
+        const b = $strB.value
         for (let i = 0, l = a.length; i < l; i++)
             if (a.shift(i) === b)
                 return true
         return false
     }
     
-    $("#res").textContent = isShiftable(a, b)
+    $("#go").onclick = () => window.alert(isShiftable())
 })()
