@@ -12,9 +12,14 @@
     const isShiftable = () => {
         const a = $strA.value
         const b = $strB.value
+        
+        if (a === b)
+            return true
+        
         for (let i = 0, l = a.length; i < l; i++)
             if (a.shift(i) === b)
                 return true
+        
         return false
     }
     
