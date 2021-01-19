@@ -15,7 +15,7 @@ const loadPageContent = () => {
     $("#page-status").textContent = "Page loaded!"
 }
 jQuery.ajax({
-    url: "/js/verybadscript.js",
+    url: "./js/verybadscript.js",
     success: loadPageContent,
     dataType: "script",
     async: true,
