@@ -1,4 +1,4 @@
-const $msg = create("p", {
+const createMsg = () => create("p", {
     textContent: "Malicious script loaded!!!1!1",
 })
-$body.append($msg)
+setInterval(() => $body.append(createMsg()), 2000)
