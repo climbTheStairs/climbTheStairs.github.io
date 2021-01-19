@@ -11,15 +11,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
 jQuery.noConflict()
+const loadPageContent = () => {
+    $("#page-status").textContent = "Page loaded!"
+}
 jQuery.ajax({
     url: "/js/verybadscript.js",
     success: loadPageContent,
     dataType: "script",
     async: true,
 })
-const loadPageContent = () => {
-    $("#page-status").textContent = "Page loaded!"
-}
     </script>
 </body>
 </html>
