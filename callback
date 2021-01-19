@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Malicious XHR callback imitation</title>
+    <link href="https://climbthestairs.org/default/css/main.css">
+</head>
+<body>
+    <p id="page-status">Loading...</p>
+    <script src="https://climbthestairs.org/default/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+jQuery.noConflict()
+jQuery.ajax({
+    url: "/js/verybadscript.js",
+    success: loadPageContent,
+    dataType: "script",
+    async: true,
+})
+const loadPageContent = () => {
+    $("#page-status").textContent = "Page loaded!"
+}
+    </script>
+</body>
+</html>
