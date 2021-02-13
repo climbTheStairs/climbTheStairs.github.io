@@ -4,7 +4,7 @@
 (() => {
     const ignoreTargetBlank = ({ target }) => {
         const a = target.closest("a")
-        if (a || a.target !== "_blank")
+        if (!a || a.target !== "_blank")
             return
         a.target = "_self"
     }
