@@ -979,11 +979,11 @@
 
 ## Sources of influence
 
-- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) <sup>[[w](https://web.archive.org/web/20201124045135/https://github.com/airbnb/javascript)]</sup>
-- [MediaWiki's JavaScript coding conventions](https://mediawiki.org/wiki/Manual:Coding_conventions/JavaScript) <sup>[[w](https://web.archive.org/web/20201025061629/https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript)]</sup>
-- [*Clean Code* by Robert C. Martin](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29) <sup>[[w](https://web.archive.org/web/20201222180855/https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29)]</sup>
-- ["JavaScript Performance" on W3Schools](https://www.w3schools.com/js/js_performance.asp) <sup>[[w](https://web.archive.org/web/20201225175144/https://www.w3schools.com/js/js_performance.asp)]</sup>
-- [JavaScript Standard Style](https://standardjs.com/rules.html) <sup>[[w](https://web.archive.org/web/20201223042111/https://standardjs.com/rules.html)]</sup>
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)<sup>[[w](https://web.archive.org/web/20201124045135/https://github.com/airbnb/javascript)]</sup>
+- [MediaWiki's JavaScript coding conventions](https://mediawiki.org/wiki/Manual:Coding_conventions/JavaScript)<sup>[[w](https://web.archive.org/web/20201025061629/https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript)]</sup>
+- [*Clean Code* by Robert C. Martin](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29)<sup>[[w](https://web.archive.org/web/20201222180855/https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29)]</sup>
+- ["JavaScript Performance" on W3Schools](https://www.w3schools.com/js/js_performance.asp)<sup>[[w](https://web.archive.org/web/20201225175144/https://www.w3schools.com/js/js_performance.asp)]</sup>
+- [JavaScript Standard Style](https://standardjs.com/rules.html)<sup>[[w](https://web.archive.org/web/20201223042111/https://standardjs.com/rules.html)]</sup>
 
 ## License
 
