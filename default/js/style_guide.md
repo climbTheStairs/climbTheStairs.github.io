@@ -798,7 +798,7 @@
     const obj2 = {}
     ```
 
-- Never use horizontal alignment.
+- Never use vertical alignment.
 
     > Why? It's difficult to manage as the code changes.
 
