@@ -970,12 +970,12 @@
     const condition2 = isFinite(x)
     
     // okay
-    x = window.parseInt(x)
+    x = parseInt(x)
     const condition1 = Number.isNaN(x)
     const condition2 = Number.isFinite(x)
     ```
 
-- Do not use jQuery and other unnecessary libraries.
+- Do not use bloated or unnecessary libraries like jQuery.
 
 ## Sources of influence
 
