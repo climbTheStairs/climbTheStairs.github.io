@@ -1,34 +1,39 @@
-"use strict"
 ;(() => {
-    window.$ = document.querySelector.bind(document)
-    window.$$ = document.querySelectorAll.bind(document)
-    window.$id = document.getElementById.bind(document)
-    window.$head = document.head || document
-    window.$body = document.body || document
-    window.create = (tag, ...props) => {
-        const $el = document.createElement(tag)
-        Object.assign($el, ...props)
-        return $el
+    "use strict"
+    const global = {
+        $: document.querySelector.bind(document),
+        $$: document.querySelectorAll.bind(document),
+        $id: document.getElementById.bind(document),
+        $root: document.documentElement,
+        $head: document.head || document,
+        $body: document.body || document,
+        create(tag, ...props) {
+            const $el = document.createElement(tag)
+            Object.assign($el, ...props)
+            return $el
+        },
     }
-    Element.prototype.$ = Element.prototype.querySelector
-    Element.prototype.$$ = Element.prototype.querySelectorAll
-    Element.prototype.CSS = function(props) {
-        Object.assign(this.style, props)
-        return this
+    const elProto = {
+        $: Element.prototype.querySelector,
+        $$: Element.prototype.querySelectorAll,
+        CSS(props) {
+            Object.assign(this.style, props)
+            return this
+        },
+        fade(cb, dur = 500) {
+            this.CSS({
+                transition: `opacity ${dur}ms`,
+                opacity: 0,
+            })
+            setTimeout(() => {
+                cb()
+                this.CSS({ opacity: "" })
+                setTimeout(() => this.CSS({ opacity: "" }), dur)
+            }, dur)
+            return this
+        },
     }
-    Element.prototype.fade = function(cb, dur = 500) {
-        this.CSS({
-            transition: `opacity ${speed}ms`,
-            opacity: 0,
-        })
-        setTimeout(() => {
-            cb()
-            this.CSS({ opacity: "" })
-            setTimeout(() => this.CSS({ opacity: "" }), dur)
-        }, dur)
-        return this
-    }
-    window.stairz = {
+    const stairz = {
         copy(value) {
             const $tmp = create("textarea", { value })
             $body.append($tmp)
@@ -67,4 +72,6 @@
             return res.join("")
         },
     }
+    Object.assign(window, global, { stairz })
+    Object.assign(Element.prototype, elProto)
 })()
