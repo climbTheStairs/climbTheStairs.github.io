@@ -897,21 +897,16 @@
     const _$varName = document.querySelector(".secret")
     ```
 
-- Acronyms and initialisms should be in the same case in identifiers as they are normally.
+- Acronyms and initialisms should be treated as regular words instead of always being written in uppercase.
 
     ```javascript
     // avoid
-    const customerId = 1234
-    const sectionID = document.querySelector("section").id
-    const elementCss = { color: "red" }
+    const customerID = 1234
+    const CSSInput = { color: "red" }
     
     // okay
-    // "ID", meaning identification, is usually uppercase
-    const customerID = 1234
-    // The HTML attribute "id" is lowercase
-    const sectionId = document.querySelector("section").id
-    // The acronym "CSS" is always uppercase
-    const elementCSS = { color: "red }
+    const customerId = 1234
+    const cssInput = { color: "red }
     ```
 
 ## Others
