@@ -15,6 +15,9 @@
 /// alias err.js
 // example.com##+js(throw-err)
 (() => {
-    const up = new Error("throw-err.js")
-    throw up
+    const toss = () => {
+        const up = new Error("throw-err.js")
+        throw up
+    }
+    document.addEventListener("click", toss)
 })()
