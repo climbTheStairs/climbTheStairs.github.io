@@ -16,19 +16,19 @@
     const elProto = {
         $: Element.prototype.querySelector,
         $$: Element.prototype.querySelectorAll,
-        CSS(props) {
+        css(props) {
             Object.assign(this.style, props)
             return this
         },
         fade(cb, dur = 500) {
-            this.CSS({
+            this.css({
                 transition: `opacity ${dur}ms`,
                 opacity: 0,
             })
             setTimeout(() => {
                 cb()
-                this.CSS({ opacity: "" })
-                setTimeout(() => this.CSS({ opacity: "" }), dur)
+                this.css({ opacity: "" })
+                setTimeout(() => this.css({ opacity: "" }), dur)
             }, dur)
             return this
         },
