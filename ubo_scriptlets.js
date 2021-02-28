@@ -10,3 +10,11 @@
     }
     document.addEventListener("click", ignoreTargetBlank)
 })()
+
+/// throw-err.js
+/// alias err.js
+// example.com##+js(throw-err)
+(() => {
+    const up = new Error("throw-err.js")
+    throw up
+})()
