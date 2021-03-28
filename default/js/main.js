@@ -54,7 +54,7 @@
             const $a = create("a", { href, download })
             $a.click()
         },
-        getRandStr(length = 50, charTypes = "") {
+        getRandStr(length = 50, charTypes = "luns") {
             let chars = ""
             const allChars = stairz.createMap({
                 l: "abcdefghijklmnopqrstuvwxyz",
@@ -64,7 +64,6 @@
             })
             for (const charType of charTypes)
                 chars += allChars.get(charType)
-            chars ||= [...allChars.values()].join("")
             
             const res = []
             while (length --> 0)
