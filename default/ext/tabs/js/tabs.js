@@ -1,7 +1,7 @@
 ;(() => {
     "use strict"
     window.Tabs = class {
-        constructor(name, tabs) {
+        constructor(name, tabs = []) {
             this.$tabs = create("form", {
                 id: name,
                 className: "tabs",
