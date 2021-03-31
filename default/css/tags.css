@@ -9,6 +9,10 @@ body {
     padding: 10px;
 }
 
+p {
+    margin-block: var(--block-gap);
+}
+
 a {
     color: var(--link-clr);
 }
