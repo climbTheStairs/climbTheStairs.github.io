@@ -12,6 +12,7 @@
             Object.assign($el, ...props)
             return $el
         },
+        createFrag: document.createDocumentFrag.bind(document),
         createText: document.createTextNode.bind(document),
     })
     const elProto = {
