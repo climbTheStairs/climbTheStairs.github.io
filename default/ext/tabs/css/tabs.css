@@ -1,0 +1,55 @@
+/**
+ * Structure
+ */
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tabs > input[type="radio"] {
+    display: none;
+}
+.tabs > .tab-title {
+	order: 0;
+}
+/* Line break */
+.tabs::after {
+    content: "";
+    flex-basis: 100%;
+    order: 1;
+}
+.tabs > .tab-content {
+	order: 2;
+}
+.tabs > input[type="radio"]:not(:checked) + .tab-title + .tab-content {
+    display: none;
+}
+
+/**
+ * Styling
+ */
+.tabs {
+	margin-block: var(--block-gap);
+}
+.tabs > .tab-title {
+	border: transparent solid;
+	border-width: var(--border-width) var(--border-width) 0;
+	cursor: pointer;
+	margin-bottom: -1px;
+	margin-left: 5px;
+	padding: 5px 10px;
+	position: relative;
+}
+.tabs > .tab-title:last-of-type {
+	margin-right: 5px;
+}
+.tabs > input[type="radio"]:checked + .tab-title {
+	background: var(--bg);
+	border-color: var(--border-clr);
+	border-radius: 5px 5px 0 0;
+	cursor: default;
+}
+.tabs > .tab-content {
+	border: var(--border);
+	padding: 10px;
+	width: 100%;
+}
