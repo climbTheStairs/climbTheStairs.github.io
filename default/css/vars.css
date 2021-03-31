@@ -4,6 +4,7 @@
 
 :root {
     --bg: black;
+    --block-gap: 15px;
     --border: var(--border-width) solid var(--border-clr);
     --border-clr: white;
     --border-width: 1px;
