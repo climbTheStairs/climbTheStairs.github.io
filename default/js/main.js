@@ -1,6 +1,6 @@
 ;(() => {
     "use strict"
-    Object.assign(window, {
+    const global = {
         $: document.querySelector.bind(document),
         $$: document.querySelectorAll.bind(document),
         $id: document.getElementById.bind(document),
@@ -35,8 +35,7 @@
             return this
         },
     }
-    Object.assign(Element.prototype, elProto)
-    window.stairz = {
+    const stairz = {
         copy(value) {
             const $tmp = create("textarea", { value })
             $body.append($tmp)
@@ -74,4 +73,8 @@
             return res.join("")
         },
     }
+    Object.assign(window, global)
+    Object.assign(Element.prototype, elProto)
+    window.stairz = stairz
+    console.log("Hello world!")
 })()
