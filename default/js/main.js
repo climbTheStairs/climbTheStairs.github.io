@@ -14,7 +14,7 @@
         },
         createFrag: document.createDocumentFragment.bind(document),
         createText: document.createTextNode.bind(document),
-    })
+    }
     const elProto = {
         $: Element.prototype.querySelector,
         $$: Element.prototype.querySelectorAll,
