@@ -75,6 +75,13 @@
         toss(err) {
             throw err
         },
+        tossMissingArgs(n = 1, name = "") {
+            const err = new TypeError(
+                (name && `${name}: `) +
+                `at least ${n} arg(s) required`
+            )
+            stairz.toss(err)
+        },
     }
     Object.assign(window, global)
     Object.assign(Element.prototype, elProto)
