@@ -257,6 +257,3 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 @@||s.pushauction.com^$css,domain=vi.vipr.ebaydesc.com
 @@||ecosia.org/images^$script,inline-script,xhr,1p
 @@/favicon.ico^$image,3p,domain=ucourses.com
-
-! Testing
-||gnu.org^$important,1p
