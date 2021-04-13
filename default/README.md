@@ -2,6 +2,9 @@ These are personal files I use for my projects. Please ignore this.
 
 # Changelog
 
+## 1.11.0
+- Stopped bothering with this changelog because it's dumb
+
 ## 1.10.0
 - Restructured `js/main.js` and created `stairz` object with useful methods
 
