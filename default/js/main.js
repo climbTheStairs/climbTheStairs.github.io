@@ -72,6 +72,9 @@
                 res.push(chars[~~(Math.random() * chars.length)])
             return res.join("")
         },
+        toss(err) {
+            throw err
+        },
     }
     Object.assign(window, global)
     Object.assign(Element.prototype, elProto)
