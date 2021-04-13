@@ -26,9 +26,8 @@
         const tab3 = {
             $content: "Chaos is a ladder. Petyr Baelish, Littlefinger.",
         }
-        const tabs = [tab1, tab2, tab3]
-        const demoTabs = new stairz.Tabs("demo-tabs", tabs)
-        $body.append(demoTabs.getEl())
+        const demoTabs = new stairz.Tabs("demo-tabs", [tab1, tab2])
+        demoTabs.add(tab3).appendTo($body)
         return demoTabs
     }
     const setEvents = (tabs) => {
@@ -39,7 +38,7 @@
         $add.onclick = () => {
             const title = prompt("Tab title:")
             const $content = prompt("Tab content:")
-            tabs.addTab({ title, $content })
+            tabs.add({ title, $content })
         }
         /*
         $remove.onclick = () => {
@@ -54,7 +53,6 @@
     }
     const demoTabs = createTabs()
     setEvents(demoTabs)
-    console.log({ demoTabs })
     $body.append(
         new stairz.Tabs("extra-tabs", [{
             title: "heres another 1",

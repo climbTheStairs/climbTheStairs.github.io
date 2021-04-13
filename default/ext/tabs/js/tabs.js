@@ -1,134 +1,141 @@
 ;(() => {
     "use strict"
-    
-    const _Tab = function({
-        title = `Tab`,
-        $content = "",
-    } = {}, parentName, tabId) {
-        this.remove = function() {
-            for (const $el of [_$input, _$title, _$content])
+    const _Tab = class {
+        constructor({ title, $content }, parentName, tabId) {
+            this._$input = create("input", {
+                type: "radio",
+                name: "tab",
+            })
+            this._$title = create("label", {
+                className: "tab-title",
+                textContent: title,
+            })
+            this._$content = create("div", {
+                className: "tab-content",
+            })
+            this._$content.append($content)
+            this._parentName = parentName
+            this._tabId = tabId
+            this.refreshId()
+        }
+        remove() {
+            for (const $el of [this._$input, this._$title, this._$content])
                 $el.remove()
             return this
         }
-        this.check = function() {
-            _$input.checked = true
+        check() {
+            this._$input.checked = true
             return this
         }
-        this.isChecked = function() {
-            return _$input.checked
+        isChecked() {
+            return this._$input.checked
         }
-        this.refreshId = function() {
-            const id = `${_parentName}-tab-${_tabId}`
-            _$input.id = id
-            _$title.htmlFor = id
+        refreshId() {
+            const id = `${this._parentName}-tab-${this._tabId}`
+            this._$input.id = id
+            this._$title.htmlFor = id
             return this
         }
-        this.getTabId = function() {
-            return _tabId
+        getTabId() {
+            return this._tabId
         }
-        this.setTabId = function(val) {
-            _tabId = val
+        setTabId(val) {
+            this._tabId = val
             this.refreshId()
             return this
         }
-        this.incrementTabId = function() {
+        incrementTabId() {
             this.setTabId(this.getTabId() + 1)
             return this
         }
-        this.decrementTabId = function() {
+        decrementTabId() {
             this.setTabId(this.getTabId() - 1)
             return this
         }
-        this.getParentName = function() {
-            return _parentName
+        getParentName() {
+            return this._parentName
         }
-        this.setParentName = function(val) {
-            _parentName = val
+        setParentName(val) {
+            this._parentName = val
             this.refreshId()
             return this
         }
-        this.getEl = function() {
+        getEl() {
             const $frag = createFrag()
-            $frag.append(_$input, _$title, _$content)
+            $frag.append(this._$input, this._$title, this._$content)
             return $frag
         }
-        
-        const _$input = create("input", {
-            type: "radio",
-            name: "tab",
-        })
-        const _$title = create("label", {
-            className: "tab-title",
-            textContent: title,
-        })
-        const _$content = create("div", {
-            className: "tab-content",
-        })
-        _$content.append($content)
-        let _parentName = parentName
-        let _tabId = tabId
-        
-        this.refreshId()
     }
-    
-    const Tabs = function(name, tabs = [{}]) {
-        this.addTab = function(tab) {
+    const _allTabs = []
+    const Tabs = class {
+        constructor(name, tabs = []) {
+            this._tabs = []
+            this._$tabs = create("form", {
+                id: name,
+                className: "tabs",
+            })
+            this._name = name
+            tabs.forEach(this.add, this)
+            _allTabs.push(this)
+        }
+        add(tab) {
             tab = new _Tab(tab, this.getName(), this.getLength())
-            _tabs.push(tab)
-            _$tabs.append(tab.getEl())
+            this._tabs.push(tab)
+            this._$tabs.append(tab.getEl())
+            if (this.getLength() === 1)
+                tab.check()
             return this
         }
-        this.addTabs = function(...tabs) {
-            tabs.forEach(this.addTab, this)
-            return this
-        }
-        this.removeTab = function(tabId) {
-            const [removedTab] = _tabs.splice(tabId, 1)
+        remove(tabId) {
+            const [removedTab] = this._tabs.splice(tabId, 1)
             if (!removedTab)
-                throw new Error(`Tab ${tabId} does not exist`)
+                throw new TypeError(`tab ${tabId} does not exist`)
             removedTab.remove()
-            if (removedTab.isChecked())
-                _tabs[0] && _tabs[0].check()
-            for (let i = tabId, l = _tabs.length; i < l; i++)
-                _tabs[i].setTabId(i)
+            if (tabId < 0)
+                tabId += this.getLength()
+            for (let i = tabId, l = this._tabs.length; i < l; i++)
+                this._tabs[i].setTabId(i)
+            if (removedTab.isChecked() && this.getLength())
+                this.check(0)
             return this
         }
-        this.removeTabs = function(...tabIds) {
-            tabIds.forEach(this.removeTab, this)
+        check(tabId) {
+            const tab = this._tabs[tabId]
+            if (!tab)
+                throw new TypeError(`tab ${tabId} does not exist`)
+            tab.check()
             return this
         }
-        this.getName = function() {
-            return _name
+        getName() {
+            return this._name
         }
-        this.setName = function(name) {
-            for (const tab of _tabs)
+        setName(name) {
+            this._name = name
+            for (const tab of this._tabs)
                 tab.setName(name)
-            _name = name
             return this
         }
-        this.getLength = function() {
-            return _tabs.length
+        getLength() {
+            return this._tabs.length
         }
-        this.setLength = function(len) {
-            for (const tab of _tabs.slice(len))
-                tab.remove()
-            _tabs.length = len
+        setLength(len) {
+            if (len < 0 || this.getLength() < len)
+                throw new RangeError(`invalid length: ${len}`)
+            while (this.getLength() > len)
+                this.remove(len)
             return this
         }
-        this.getEl = function() {
-            return _$tabs
+        appendTo($el) {
+            $el.append(this._$tabs)
+            return this
         }
-        
-        const _tabs = []
-        const _$tabs = create("form", {
-            id: name,
-            className: "tabs",
-        })
-        let _name = name
-        
-        this.addTabs(...tabs)
-        _tabs[0].check()
+        getEl() {
+            return this._$tabs
+        }
+        static getAllTabs() {
+            const allTabs = [..._allTabs]
+            return allTabs
+        }
     }
-    
     window.stairz.Tabs = Tabs
 })()
