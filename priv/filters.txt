@@ -41,7 +41,7 @@ open.spotify.com##.ao.ap.as.b3.b4.eo.da.ep.eq.er.dk.es
 pinterest.ca###related-pins-section
 reddit.com##.ad-container, [id^="ad_"], .listingsignupbar, .premium-banner-outer, .premium-banner, .thing.promotedlink, #hsts_pixel
 !! Obscure posts from liberal subreddits
-reddit.com###siteTable > .thing:has(.tagline > .subreddit:has-text(/^r/(againsthatesubreddits|amitheasshole|atheism|baseball|blackpeopletwitter|CapitolConsequences|china|Conservative|coronavirus|dankmemes|facepalm|fragilemaleredditor|fragilewhiteredditor|fuckyoukaren|funny|hockey|iamatotalpieceofshit|iamverybadass|iamverysmart|idiotsincars|justiceserved|leopardsatemyface|memes|mildlyinteresting|minecraft|murderedbyaoc|MurderedByWords|nba|news|pewdiepiesubmissions|pics|politicalhumor|politics|publicfreakout|selfawarewolves|showerthoughts|therightcantmeme|trashy|whitepeopletwitter|winstupidprizes|worldnews)$/i)):style(opacity: 0.1;)
+reddit.com###siteTable > .thing:has(.tagline > .subreddit:has-text(/^r/(againsthatesubreddits|amitheasshole|atheism|baseball|blackpeopletwitter|CapitolConsequences|china|Conservative|coronavirus|dankmemes|facepalm|fragilemaleredditor|fragilewhiteredditor|fuckyoukaren|funny|hockey|iamatotalpieceofshit|iamverybadass|iamverysmart|idiotsincars|justiceserved|leopardsatemyface|memes|mildlyinteresting|minecraft|murderedbyaoc|MurderedByWords|nba|news|offmychest|pewdiepiesubmissions|pics|politicalhumor|politics|publicfreakout|selfawarewolves|showerthoughts|therightcantmeme|trashy|whitepeopletwitter|winstupidprizes|worldnews)$/i)):style(opacity: 0.1;)
 !! COVID propaganda
 reddit.com##.happening-now-wrap:has-text(r/Coronavirus)
 ! stackexchange.com##.z-banner.r0.l0.b0.ps-fixed.ff-sans.p8
