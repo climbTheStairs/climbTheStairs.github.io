@@ -163,9 +163,9 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 !! News
 @@||*.m3u8^$xhr
 @@||*.ts^$xhr
-@@||fncstatic.com/static/isa/core.js^$script,domain=video.foxnews.com
-@@||static.foxnews.com/static/isa/app/lib/VisitorAPI.js^$script,domain=video.foxnews.com
-@@||foxnews.com/static/orion/html/video/iframe/vod.html^$frame,domain=video.foxnews.com
+@@||fncstatic.com/static/isa/core.js^$script,domain=foxnews.com
+@@||static.foxnews.com/static/isa/app/lib/VisitorAPI.js^$script,1p
+@@||foxnews.com/static/orion/html/video/iframe/vod.html^$frame,1p
 @@||gannett-cdn.com^$image
 @@||gannettdigital.com/universal-web-client/$font,script,xhr
 @@||assets.guim.co.uk/assets/EditionDropdown.*.js^$script,domain=theguardian.com
