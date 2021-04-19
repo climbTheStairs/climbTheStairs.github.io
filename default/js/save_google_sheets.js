@@ -20,5 +20,9 @@ window.stairz.saveGoogleSheets = () => {
         row.forEach((cell, i) => data[keys[i]] = cell)
         return data
     })
-    return JSON.stringify(data, null, 4)
+    const resource = stairz.createDataResource(
+        "application/json",
+        JSON.stringify(data, null, 4),
+    )
+    stairz.dl(resource, "google_sheets_dl")
 }

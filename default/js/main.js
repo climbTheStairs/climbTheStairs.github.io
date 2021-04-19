@@ -44,7 +44,7 @@
             $tmp.remove()
         },
         createDataResource(contentType, val) {
-            const resource = `data:${contentType};base64,${btoa(val)}`
+            const resource = `data:${contentType},${encodeURIComponent(val)}`
             return resource
         },
         createMap(obj) {
