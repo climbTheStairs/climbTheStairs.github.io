@@ -1,14 +1,14 @@
 window.stairz.saveGoogleSheets = () => {
     "use strict"
 
-    const waffles = [...$$("table.waffle")]
-    if (waffles.length !== 1)
-        throw new TypeError("missing or multiple .waffle elements")
-    const [waffle] = waffles
-    if (waffle.$(":scope > thead").textContent.trim())
+    const tables = [...$$("table.waffle")]
+    if (tables.length !== 1)
+        throw new TypeError("missing or multiple tables")
+    const [$table] = tables
+    if ($table.$(":scope > thead").textContent.trim())
         throw new TypeError("thead is not empty")
 
-    const table = [...waffle.$(":scope > tbody").children].map((row) => {
+    const table = [...$table.$(":scope > tbody").children].map((row) => {
         row = [...row.children]
             .filter(cell => !cell.matches("th.row-headers-background"))
             .map(cell => cell.innerText.trim())
@@ -20,6 +20,7 @@ window.stairz.saveGoogleSheets = () => {
         row.forEach((cell, i) => data[keys[i]] = cell)
         return data
     })
+
     const resource = stairz.createDataResource(
         "application/json",
         JSON.stringify(data, null, 4),
