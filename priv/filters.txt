@@ -139,6 +139,10 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 ||securemetrics.apple.com^$important
 !!! Block direct bit.ly requests
 ||bit.ly^$important
+!!! Disqus recommendations
+||disqus.com/recommendations^$script,frame
+||disqus.com/api/3.0/discovery/listRecommendations.json^$xhr
+||disquscdn.com/next/recommendations/$css,image,script
 !!! TODO: Add request type for following filter
 ||ucourses.com/*/log^$badfilter
 !! Block Zoom auto download
