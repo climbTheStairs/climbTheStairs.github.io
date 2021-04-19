@@ -11,7 +11,7 @@ window.stairz.saveGoogleSheets = () => {
     const table = [...waffle.$(":scope > tbody").children].map((row) => {
         row = [...row.children]
             .filter(cell => !cell.matches("th.row-headers-background"))
-            .map(cell => cell.innerText)
+            .map(cell => cell.innerText.trim())
         return row
     })
     const keys = table.shift()
