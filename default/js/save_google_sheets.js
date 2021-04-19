@@ -1,3 +1,12 @@
+/**
+ * Instructions:
+ * 1. Change the path `/edit` to `/preview` in the url
+ * `/spreadsheets/d/[DOCUMENTID]/edit#gid=0`.
+ * 2. For each sheet, there should be a separate `iframe`. Find each
+ * the source of each `iframe` you want to save and open them in new
+ * windows.
+ * 3. Call `stairz.saveGoogleSheets()` in each window.
+ */
 window.stairz.saveGoogleSheets = () => {
     "use strict"
 
