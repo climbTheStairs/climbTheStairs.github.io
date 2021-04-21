@@ -104,6 +104,9 @@
         getShortcuts() {
             return { $, $$, $head, $body, $create }
         },
+        glob() {
+            Object.assign(window, stairz.getShortcuts())
+        },
         importModule(name) {
             const src = `https://climbthestairs.org/default/js/${name}.js`
             stairz.importScript(src)
