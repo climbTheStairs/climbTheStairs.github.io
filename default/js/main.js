@@ -55,14 +55,15 @@
             return this
         },
         fade(cb, dur = 500) {
+            const { opacity, transition } = this.style
             this.css({
                 transition: `opacity ${dur}ms`,
                 opacity: 0,
             })
             setTimeout(() => {
                 cb()
-                this.css({ opacity: "" })
-                setTimeout(() => this.css({ opacity: "" }), dur)
+                this.css({ opacity })
+                setTimeout(() => this.css({ transition }), dur)
             }, dur)
             return this
         },
