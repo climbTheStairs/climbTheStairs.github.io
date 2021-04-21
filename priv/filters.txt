@@ -80,7 +80,7 @@ zapier.com##.hello-pop-up, .hello-pop-up--not-top
 *$font,domain=fcdn.stream|vidsrc.*
 *$image,domain=fcdn.stream|twist.moe|vidsrc.*
 *$script,domain=ecosia.org|fcdn.stream|mail.google.com|lancashiretelegraph.co.uk|reddit.com|usatoday.com|vidsrc.*
-*$inline-script,domain=ecosia.org|imgur.com|mail.google.com|lancashiretelegraph.co.uk
+*$inline-script,domain=ecosia.org|mail.google.com|lancashiretelegraph.co.uk
 *$xhr,websocket,domain=ecosia.org|fcdn.stream|imgur.com|lancashiretelegraph.co.uk|reddit.com|vidsrc.*
 *$frame,domain=foxnews.com
 *$ping
