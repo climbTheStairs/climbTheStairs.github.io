@@ -1,38 +1,44 @@
 /**
  * Instructions:
  * 1. Change the path `/edit` to `/preview` in the url
- * `/spreadsheets/d/[DOCUMENTID]/edit#gid=0`.
+ *    `/spreadsheets/d/[DOCUMENTID]/edit#gid=0`.
  * 2. For each sheet, there should be a separate `iframe`. Find each
- * the source of each `iframe` you want to save and open them in new
- * windows.
+ *    the source of each `iframe` you want to save and open them in new
+ *    windows.
  * 3. Call `stairz.saveGoogleSheets()` in each window.
  */
-window.stairz.saveGoogleSheets = () => {
+;(() => {
     "use strict"
+    
+    const { $, $$ } = stairz.getShortcuts()
+    
+    const saveGoogleSheets = () => {
+        const tables = [...$$("table.waffle")]
+        if (tables.length !== 1)
+            throw new TypeError("missing or multiple tables")
+        const [$table] = tables
+        if ($table.$(":scope > thead").textContent.trim())
+            throw new TypeError("thead is not empty")
 
-    const tables = [...$$("table.waffle")]
-    if (tables.length !== 1)
-        throw new TypeError("missing or multiple tables")
-    const [$table] = tables
-    if ($table.$(":scope > thead").textContent.trim())
-        throw new TypeError("thead is not empty")
+        const table = [...$table.$(":scope > tbody").children].map((row) => {
+            row = [...row.children]
+                .filter(cell => !cell.matches("th.row-headers-background"))
+                .map(cell => cell.innerText.trim())
+            return row
+        })
+        const keys = table.shift()
+        const data = table.map((row) => {
+            const data = {}
+            row.forEach((cell, i) => data[keys[i]] = cell)
+            return data
+        })
 
-    const table = [...$table.$(":scope > tbody").children].map((row) => {
-        row = [...row.children]
-            .filter(cell => !cell.matches("th.row-headers-background"))
-            .map(cell => cell.innerText.trim())
-        return row
-    })
-    const keys = table.shift()
-    const data = table.map((row) => {
-        const data = {}
-        row.forEach((cell, i) => data[keys[i]] = cell)
-        return data
-    })
-
-    const resource = stairz.createDataResource(
-        "application/json",
-        JSON.stringify(data, null, 4),
-    )
-    stairz.dl(resource, "google_sheets_dl")
-}
+        const resource = stairz.createDataResource(
+            "application/json",
+            JSON.stringify(data, null, 4),
+        )
+        stairz.dl(resource, "google_sheets_dl")
+    }
+    
+    window.stairz.saveGoogleSheets = saveGoogleSheets
+})();
