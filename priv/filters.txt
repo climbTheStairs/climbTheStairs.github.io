@@ -87,8 +87,8 @@ zapier.com##.hello-pop-up, .hello-pop-up--not-top
 !! Google
 ||adservice.google.*^$3p,important
 ||play.google.com/log^$xhr,important
-||google.com/*/cleardot.gif^$image
-||gstatic.com/*/cleardot.gif^$image
+||google.com/*/cleardot.gif^$image,redirect=1x1.gif
+||gstatic.com/*/cleardot.gif^$image,redirect=1x1.gif
 !!! Weird Gmail timezone tracking thing
 ||google.com/*^name=tz^$script
 ||google.com/*^v=tz^$image
