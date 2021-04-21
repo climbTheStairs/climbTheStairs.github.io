@@ -1,23 +1,55 @@
 ;(() => {
     "use strict"
-    const global = {
-        $: document.querySelector.bind(document),
-        $$: document.querySelectorAll.bind(document),
-        $id: document.getElementById.bind(document),
-        $root: document.documentElement,
-        $head: document.head || document,
-        $body: document.body || document,
-        create(tag, ...props) {
-            const $el = document.createElement(tag)
-            Object.assign($el, ...props)
-            return $el
+    const $ = document.querySelector.bind(document)
+    const $$ = document.querySelectorAll.bind(document)
+    const $head = document.head || document
+    const $body = document.body || document
+    const $create = (tag, ...props) => {
+        const $el = document.createElement(tag)
+        Object.assign($el, ...props)
+        return $el
+    }
+    const arrProto = {
+        equals(arr) {
+            if (!Array.isArray(arr))
+                throw new TypeError("arg must be of type array")
+            if (this.length !== arr.length)
+                return false
+            for (let i = 0, l = this.length; i < l; i++)
+                if (this[i] !== arr[i])
+                    return false
+            return true
         },
-        createFrag: document.createDocumentFragment.bind(document),
-        createText: document.createTextNode.bind(document),
+        neg(i) {
+            return this[this.length - i]
+        },
+        random() {
+            return this[stairz.random(this.length)]
+        },
+        remove(i) {
+            const [removed] = this.splice(i, 1)
+            return removed
+        },
+        unique() {
+            return [...new Set(this)]
+        },
     }
     const elProto = {
         $: Element.prototype.querySelector,
         $$: Element.prototype.querySelectorAll,
+        appendAfter($el) {
+            // https://stackoverflow.com/a/5192810/9281985
+            $el.parentNode.insertBefore(this, $el.nextSibling)
+            return this
+        },
+        appendBefore($el) {
+            $el.parentNode.insertBefore(this, $el)
+            return this
+        },
+        appendTo($el) {
+            $el.append(this)
+            return this
+        },
         css(props) {
             Object.assign(this.style, props)
             return this
@@ -37,54 +69,69 @@
     }
     const stairz = {
         copy(value) {
-            const $tmp = create("textarea", { value })
-            $body.append($tmp)
-            $tmp.select()
+            const $tmp = $create("textarea", { value })
+            $tmp.appendTo($body).select()
             document.execCommand("copy")
             $tmp.remove()
         },
         createDataResource(contentType, val) {
-            const resource = `data:${contentType},${encodeURIComponent(val)}`
-            return resource
+            return `data:${contentType},${encodeURIComponent(val)}`
         },
         createMap(obj) {
             const iter = Object.entries(obj)
-            const map = new Map(iter)
-            return map
+            return new Map(iter)
         },
         dl(href, download = "go_drink_water_and_do_hwk") {
-            const $a = create("a", { href, download })
+            const $a = $create("a", { href, download })
             $a.click()
         },
         getRandStr(length = 50, charTypes = "luns") {
-            let chars = ""
+            const chars = []
             const allChars = stairz.createMap({
-                l: "abcdefghijklmnopqrstuvwxyz",
-                u: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-                n: "0123456789",
-                s: "!@#$%^&*()-=_+,.",
+                l: "abcdefghijklmnopqrstuvwxyz".split(""),
+                u: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
+                n: "0123456789".split(""),
+                s: "!@#$%^&*()-=_+,.".split(""),
             })
             for (const charType of charTypes)
-                chars += allChars.get(charType)
-            
+                chars.push(...allChars.get(charType))
             const res = []
-            while (length --> 0)
-                res.push(chars[~~(Math.random() * chars.length)])
+            while (length--)
+                res.push(chars.random())
             return res.join("")
+        },
+        getShortcuts() {
+            return { $, $$, $head, $body, $create }
+        },
+        importScript(src) {
+            const $script = $create("script", { src })
+            $script.appendTo($body).remove()
+        },
+        random(n) {
+            return Math.floor(Math.random() * n)
+        },
+        subst(substs) {
+            let str = this
+            for (const [key, val] of Object.entries(substs))
+                str = str.replace("${" + key + "}", val)
+            return str
         },
         toss(err) {
             throw err
         },
-        tossMissingArgs(n = 1, name = "") {
-            const err = new TypeError(
-                (name && `${name}: `) +
-                `at least ${n} arg(s) required`
-            )
-            stairz.toss(err)
-        },
     }
-    Object.assign(window, global)
-    Object.assign(Element.prototype, elProto)
+    const assignToProto = (target, source) => {
+        const proto = target.prototype
+        Object.entries(source).forEach(([key, val]) => {
+            const fullName = `${proto.constructor.name}.prototype.${key}`
+            if (proto.hasOwnProperty(key))
+                console.warn(`Overriding ${fullName}!`)
+            proto[key] = val
+            Object.defineProperty(proto, key, { enumerable: false })
+        })
+    }
+    assignToProto(Array, arrProto)
+    assignToProto(Element, elProto)
     window.stairz = stairz
     console.log("Hello world!")
-})()
+})();
