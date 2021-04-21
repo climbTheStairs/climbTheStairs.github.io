@@ -104,6 +104,10 @@
         getShortcuts() {
             return { $, $$, $head, $body, $create }
         },
+        importModule(name) {
+            const src = `https://climbthestairs.org/default/js/${name}.js`
+            stairz.importScript(src)
+        },
         importScript(src) {
             const $script = $create("script", { src })
             $script.appendTo($body).remove()
