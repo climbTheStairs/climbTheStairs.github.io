@@ -29,6 +29,8 @@ starwars.fandom.com##body:style(background: none !important;)
 ! github.com##.js-remove-unless-platform.tooltipped-nw.tooltipped.btn-octicon
 !! Google products bar, annoying (blocked) tracking pixel
 mail.google.com###gbar, img[src$="/cleardot.gif"]
+!! Imgur bloat
+imgur.com##.App-cover.GalleryCover, .Gallery-EngagementBar, .Gallery-Sidebar, .badges-wrapper, .BottomRecirc, .Footer-wrapper, iframe
 instagram.com##.Yx5HN.RnEpo:has-text(Turn on Notifications)
 ! khanacademy.org##._7fvkmfg
 ! knowyourmeme.com###search-interest, #sidebar, .google-trends-embed-wrapper, .section_content.related_memes
@@ -78,8 +80,8 @@ zapier.com##.hello-pop-up, .hello-pop-up--not-top
 *$font,domain=fcdn.stream|vidsrc.*
 *$image,domain=fcdn.stream|twist.moe|vidsrc.*
 *$script,domain=ecosia.org|fcdn.stream|mail.google.com|lancashiretelegraph.co.uk|reddit.com|usatoday.com|vidsrc.*
-*$inline-script,domain=ecosia.org|mail.google.com|lancashiretelegraph.co.uk
-*$xhr,websocket,domain=ecosia.org|fcdn.stream|lancashiretelegraph.co.uk|reddit.com|vidsrc.*
+*$inline-script,domain=ecosia.org|imgur.com|mail.google.com|lancashiretelegraph.co.uk
+*$xhr,websocket,domain=ecosia.org|fcdn.stream|imgur.com|lancashiretelegraph.co.uk|reddit.com|vidsrc.*
 *$frame,domain=foxnews.com
 *$ping
 
@@ -143,6 +145,7 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 ||disqus.com/recommendations^$script,frame
 ||disqus.com/api/3.0/discovery/listRecommendations.json^$xhr
 ||disquscdn.com/next/recommendations/$css,image,script
+||api.imgur.com/post/v1/posts^$xhr,important
 !!! TODO: Add request type for following filter
 ||ucourses.com/*/log^$badfilter
 !! Block Zoom auto download
@@ -262,4 +265,6 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 !! Misc
 @@||s.pushauction.com^$css,domain=vi.vipr.ebaydesc.com
 @@||ecosia.org/images^$script,inline-script,xhr,1p
-@@/favicon.ico^$image,3p,domain=ucourses.com
+@@||api.imgur.com/post/v1/albums/$xhr,1p
+@@||api.imgur.com/comment/v1/comments^$xhr,1p
+@@/favicon.ico^$image,3p,domain=ucourses.com,badfilter
