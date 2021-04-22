@@ -10,7 +10,7 @@
         notArray: "data is not an array",
     }
     
-    const jsonToCsv = (data) => {
+    const jsonToCsv = (data, fName = "data") => {
         if (!Array.isArray(data))
             throw new TypeError(ERR.notArray)
         if (!data.length)
@@ -39,7 +39,7 @@
         
         const mimeType = "text/csv;charset=UTF-8;header=present"
         const resource = stairz.createDataResource(mimeType, csv)
-        stairz.dl(resource, "data")
+        stairz.dl(resource, fName)
     }
     
     window.stairz.jsonToCsv = jsonToCsv

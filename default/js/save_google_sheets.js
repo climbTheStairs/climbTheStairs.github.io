@@ -12,7 +12,7 @@
     
     const { $, $$ } = stairz.getShortcuts()
     
-    const saveGoogleSheets = () => {
+    const saveGoogleSheets = (fName = "google_sheets_dl") => {
         const tables = [...$$("table.waffle")]
         if (tables.length !== 1)
             throw new TypeError("missing or multiple tables")
@@ -37,7 +37,7 @@
             "application/json",
             JSON.stringify(data, null, 4),
         )
-        stairz.dl(resource, "google_sheets_dl")
+        stairz.dl(resource, fName)
     }
     
     window.stairz.saveGoogleSheets = saveGoogleSheets
