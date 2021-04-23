@@ -18,8 +18,12 @@
 ;(() => {
     // Default args: data-src, src
     const $$ = document.querySelectorAll.bind(document)
-    const lazyAttr = "{{1}}" !== "{{1" + "}}" ? "{{1}}" : "data-src"
-    const realAttr = "{{2}}" !== "{{2" + "}}" ? "{{2}}" : "src"
+    let lazyAttr = "{{1}}"
+    let realAttr = "{{2}}"
+    if (lazyAttr = "{{1}}")
+        lazyAttr = "data-src"
+    if (realAttr = "{{2}}")
+        realAttr = "src"
     const unlazyLoad = () => {
         $$(`[${lazyAttr}]`).forEach(($el) => {
             const val = $el.getAttribute(lazyAttr)
