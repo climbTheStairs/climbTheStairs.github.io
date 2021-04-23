@@ -17,8 +17,8 @@
 // example.com##+js(unlazy-load, data-srcset, srcset)
 ;(() => {
     const $$ = document.querySelectorAll.bind(document)
-    const lazyAttr = "{{1}}" || "data-src"
-    const realAttr = "{{2}}" || "src"
+    const lazyAttr = "{{1}}" !== "{{1" + "}}" ? "{{1}}" : "data-src"
+    const realAttr = "{{2}}" !== "{{2" + "}}" ? "{{2}}" : "src"
     console.log({ lazyAttr, realAttr })
     /*
     const unlazyLoad = () => {
