@@ -7,9 +7,9 @@
         if (!a || a.target !== "_blank")
             return
         a.target = "_self"
+        console.log("+js(ignore-target-blank)")
     }
     document.addEventListener("click", ignoreTargetBlank)
-    console.log("+js(ignore-target-blank)")
 })();
 
 /// lazy-load.js
@@ -17,16 +17,14 @@
 // example.com##+js(lazy-load)
 ;(() => {
     const $$ = document.querySelectorAll.bind(document)
-    const lazyLoadAll = () => {
-        const notLoaded = $$("img[data-src]")
-        notLoaded.forEach(($el) => {
-            console.log($el.dataset.src)
+    const lazyLoad = () => {
+        $$("img[data-src]").forEach(($el) => {
             $el.src = $el.dataset.src
             delete $el.dataset.src
         })
-        console.log("+js(lazy-load)", notLoaded)
+        console.log("+js(lazy-load)")
     }
-    window.addEventListener("load", lazyLoadAll)
+    window.addEventListener("load", lazyLoad)
 })();
 
 /// stairz.js
