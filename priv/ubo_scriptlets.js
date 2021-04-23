@@ -9,6 +9,7 @@
         a.target = "_self"
     }
     document.addEventListener("click", ignoreTargetBlank)
+    console.log("+js(ignore-target-blank)")
 })();
 
 /// lazy-load.js
@@ -17,6 +18,7 @@
 ;(() => {
     const $$ = document.querySelectorAll.bind(document)
     $$("[data-src]").forEach($el => $el.src = $el.dataset.src)
+    console.log("+js(lazy-load)")
 })();
 
 /// stairz.js
@@ -28,4 +30,5 @@
     const $body = document.body || document
     $body.append($script)
     $script.remove()
+    console.log("+js(stairz)")
 })();
