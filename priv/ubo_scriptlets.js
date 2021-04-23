@@ -23,7 +23,7 @@
         $el.src = $el.dataset.src
         delete $el.dataset.src
     })
-    console.log("+js(lazy-load)")
+    console.log("+js(lazy-load)", notLoaded)
 })();
 
 /// stairz.js
