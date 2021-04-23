@@ -16,11 +16,10 @@
 /// alias ull.js
 // example.com##+js(unlazy-load, data-srcset, srcset)
 ;(() => {
+    // Default args: data-src, src
     const $$ = document.querySelectorAll.bind(document)
     const lazyAttr = "{{1}}" !== "{{1" + "}}" ? "{{1}}" : "data-src"
     const realAttr = "{{2}}" !== "{{2" + "}}" ? "{{2}}" : "src"
-    console.log({ lazyAttr, realAttr })
-    /*
     const unlazyLoad = () => {
         $$(`[${lazyAttr}]`).forEach(($el) => {
             const val = $el.getAttribute(lazyAttr)
@@ -29,7 +28,6 @@
         console.log(`+js(unlazy-load, ${lazyAttr}, ${realAttr})`)
     }
     window.addEventListener("load", unlazyLoad)
-    */
 })();
 
 /// stairz.js
