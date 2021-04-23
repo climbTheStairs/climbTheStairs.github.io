@@ -12,19 +12,21 @@
     document.addEventListener("click", ignoreTargetBlank)
 })();
 
-/// lazy-load.js
-/// alias lzl.js
-// example.com##+js(lazy-load)
+/// unlazy-load.js
+/// alias ull.js
+// example.com##+js(unlazy-load, data-srcset, srcset)
 ;(() => {
     const $$ = document.querySelectorAll.bind(document)
-    const lazyLoad = () => {
-        $$("img[data-src]").forEach(($el) => {
-            $el.src = $el.dataset.src
-            delete $el.dataset.src
+    const lazyAttr = "{{1}}" || "data-src"
+    const realAttr = "{{2}}" || "src"
+    const unlazyLoad = () => {
+        $$(`[${lazyAttr}]`).forEach(($el) => {
+            const val = $el.getAttribute(lazyAttr)
+            $el.setAttribute(realAttr, val)
         })
-        console.log("+js(lazy-load)")
+        console.log(`+js(unlazy-load, ${lazyAttr}, ${realAttr})`)
     }
-    window.addEventListener("load", lazyLoad)
+    window.addEventListener("load", unlazyLoad)
 })();
 
 /// stairz.js
