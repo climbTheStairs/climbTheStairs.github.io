@@ -17,13 +17,16 @@
 // example.com##+js(lazy-load)
 ;(() => {
     const $$ = document.querySelectorAll.bind(document)
-    const notLoaded = $$("img[data-src]")
-    notLoaded.forEach(($el) => {
-        console.log($el.dataset.src)
-        $el.src = $el.dataset.src
-        delete $el.dataset.src
-    })
-    console.log("+js(lazy-load)", notLoaded)
+    const lazyLoadAll = () => {
+        const notLoaded = $$("img[data-src]")
+        notLoaded.forEach(($el) => {
+            console.log($el.dataset.src)
+            $el.src = $el.dataset.src
+            delete $el.dataset.src
+        })
+        console.log("+js(lazy-load)", notLoaded)
+    }
+    window.addEventListener("load", lazyLoadAll)
 })();
 
 /// stairz.js
