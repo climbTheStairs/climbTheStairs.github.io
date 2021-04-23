@@ -17,11 +17,12 @@
 // example.com##+js(lazy-load)
 ;(() => {
     const $$ = document.querySelectorAll.bind(document)
-    $$("img[data-src]").forEach($el => {
+    const lazyLoad = ($el) => {
         console.log($el.dataset.src)
         $el.src = $el.dataset.src
         delete $el.dataset.src
-    })
+    }
+    $$("img[data-src]").forEach($el => setTimeout(() => lazyLoad($el), 2000))
     console.log("+js(lazy-load)")
 })();
 
