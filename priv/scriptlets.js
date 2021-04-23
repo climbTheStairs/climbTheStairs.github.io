@@ -20,9 +20,9 @@
     const $$ = document.querySelectorAll.bind(document)
     let lazyAttr = "{{1}}"
     let realAttr = "{{2}}"
-    if (lazyAttr = "{{1}}")
+    if (lazyAttr = "{{1" + "}}")
         lazyAttr = "data-src"
-    if (realAttr = "{{2}}")
+    if (realAttr = "{{2" + "}}")
         realAttr = "src"
     const unlazyLoad = () => {
         $$(`[${lazyAttr}]`).forEach(($el) => {
