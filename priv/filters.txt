@@ -149,7 +149,7 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 !!! TODO: Add request type for following filter
 ||ucourses.com/*/log^$badfilter
 !! Block Zoom auto download
-||zoom.us/launch/download/*/Zoom_launcher.exe^$frame
+||zoom.us/launch/download/*/Zoom_launcher.exe^$frame,1p,important
 
 ! Allow
 !! CDNs
