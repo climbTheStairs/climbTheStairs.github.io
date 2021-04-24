@@ -79,9 +79,9 @@ zapier.com##.hello-pop-up, .hello-pop-up--not-top
 *$css,domain=vidsrc.*
 *$font,domain=fcdn.stream|vidsrc.*
 *$image,domain=fcdn.stream|twist.moe|vidsrc.*
-*$script,domain=ecosia.org|fcdn.stream|mail.google.com|lancashiretelegraph.co.uk|reddit.com|usatoday.com|vidsrc.*
+*$script,domain=ecosia.org|fcdn.stream|mail.google.com|lancashiretelegraph.co.uk|reddit.com|theguardian.com|usatoday.com|vidsrc.*
 *$inline-script,domain=ecosia.org|mail.google.com|lancashiretelegraph.co.uk
-*$xhr,websocket,domain=ecosia.org|fcdn.stream|imgur.com|lancashiretelegraph.co.uk|reddit.com|vidsrc.*
+*$xhr,websocket,domain=ecosia.org|fcdn.stream|imgur.com|lancashiretelegraph.co.uk|realsimple.com|eddit.com|vidsrc.*
 *$frame,domain=foxnews.com
 *$ping
 
@@ -124,13 +124,6 @@ reddit.com##+js(abort-current-inline-script, googletag.pubads)
 reddit.com##+js(abort-current-inline-script, window.__adslots)
 reddit.com##+js(remove-attr, data-outbound-url)
 
-!! News
-||global.fncstatic.com/static/v/all/js/ads.js^$script,important
-||static.foxnews.com/static/leap/sites/fnc/metrics.js^$script,important
-||video.foxnews.com/v/feed/playlist/$xhr,important
-||assets.guim.co.uk/$script,domain=theguardian.com
-usatoday.com##+js(abort-on-property-read, _sp_._networkListenerData)
-
 !! Movies
 /anony.js^$script,xhr,domain=vidsrc.me
 /asset/bann.js^$xhr,domain=fcdn.stream|vidsrc.me
@@ -145,11 +138,13 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 ||disqus.com/recommendations^$script,frame
 ||disqus.com/api/3.0/discovery/listRecommendations.json^$xhr
 ||disquscdn.com/next/recommendations/$css,image,script
+||global.fncstatic.com/static/v/all/js/ads.js^$script,important
+||static.foxnews.com/static/leap/sites/fnc/metrics.js^$script,important
+||video.foxnews.com/v/feed/playlist/$xhr,important
 ||api.imgur.com/post/v1/posts^$xhr,important
-!!! TODO: Add request type for following filter
-||ucourses.com/*/log^$badfilter
 !! Block Zoom auto download
 ||zoom.us/launch/download/*/Zoom_launcher.exe^$frame,1p,important
+usatoday.com##+js(abort-on-property-read, _sp_._networkListenerData)
 
 ! Allow
 !! CDNs
@@ -170,6 +165,7 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 @@||youtube.com/s/player/$script
 
 !! News
+@@||*.vtt^$media
 @@||*.m3u8^$xhr
 @@||*.ts^$xhr
 @@||fncstatic.com/static/isa/core.js^$script,domain=foxnews.com
@@ -187,6 +183,7 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 @@||lancashiretelegraph.co.uk/*/fetch-comments^$xhr,1p
 @@||imagesvc.meredithcorp.io^$image
 @@||tags.news.com.au/prod/heartbeat/*/MediaSDK.min.js^$script
+@@||realsimple.com/element-api/content-proxy/structured-data^$xhr
 @@||cdn.video.timeinc.com/jumpstart/$font,script
 
 !! Reddit
