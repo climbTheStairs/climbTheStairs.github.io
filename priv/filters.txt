@@ -5,7 +5,7 @@ askubuntu.com,stackexchange.com,stackoverflow.com,superuser.com##.js-consent-ban
 askubuntu.com,stackexchange.com,stackoverflow.com,superuser.com##body, .top-bar:style(margin-top: 0 !important;)
 cbr.com##.ad-zone-container, .related-single, .sharing, .next-single, .sentinel-article-nextArticle, .sidebar-tabs, .w-article-related
 dictionary.com,thesaurus.com###grammar-coach-ad
-diffchecker.com##.ReactModalPortal, .hero.jsx-975993214, .banner-container, .ads
+diffchecker.com##.ReactModalPortal, .hero, .banner-container, .ads
 expressjs.com###blm-banner
 !! Cookie notice
 fandom.com##._1MLS_xjiUjam_u2qmURY4i
