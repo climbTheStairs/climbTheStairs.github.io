@@ -126,6 +126,7 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 ||disqus.com/recommendations^$script,frame
 ||disqus.com/api/3.0/discovery/listRecommendations.json^$xhr
 ||disquscdn.com/next/recommendations/$css,image,script
+||developer.mozilla.org/api/v1/whoami^$xhr
 ||global.fncstatic.com/static/v/all/js/ads.js^$script,important
 ||static.foxnews.com/static/leap/sites/fnc/metrics.js^$script,important
 ||video.foxnews.com/v/feed/playlist/$xhr,important
