@@ -10,22 +10,7 @@ expressjs.com###blm-banner
 !! Cookie notice
 fandom.com##._1MLS_xjiUjam_u2qmURY4i
 fandom.com##body._2CE3idgw4xgGVje2bvPxLv:style(overflow-y: auto !important;)
-!! Global nav garbage
-fandom.com##.wds-global-navigation__content-bar-left
-!! "Share" button
-fandom.com###ShareEntryPoint
-!! Video ad
-fandom.com##.featured-video__wrapper
-!! "Popular Pages"
-fandom.com###WikiaAdInContentPlaceHolder
-!! "Fan Feed"
-fandom.com###mixed-content-footer
-!! Footer
-fandom.com##.wds-global-footer
-!! WikiaBar when logged out
-fandom.com###WikiaBar:has(.wikia-bar-anon)
-starwars.fandom.com##:root:style(--oasis-community-background-image: none !important;)
-starwars.fandom.com##body:style(background: none !important;)
+fandom.com##.wds-global-navigation__content-bar-left, #ShareEntryPoint, .featured-video__wrapper, #WikiaAdInContentPlaceHolder, #mixed-content-footer, .wds-global-footer, #WikiaBar:has(.wikia-bar-anon)
 ! github.com##.js-remove-unless-platform.tooltipped-nw.tooltipped.btn-octicon
 !! Google products bar, annoying (blocked) tracking pixel
 mail.google.com###gbar, img[src$="/cleardot.gif"]
@@ -41,6 +26,8 @@ assignments.onenote.com##.assignment-card-class-name-text__37Hag:has-text(Math C
 !! Login prompt
 open.spotify.com##.ao.ap.as.b3.b4.eo.da.ep.eq.er.dk.es
 pinterest.ca###related-pins-section
+psychologytoday.com##.sidebar_first, #block-pt-stats-most-popular, #block-pt-td-fat-cities, #block-pt-blog-clinical-paths-next, .share-buttons, .footer_nav__magazine_archive
+realsimple.com##.articleContainer__sharebar
 reddit.com##.ad-container, [id^="ad_"], .listingsignupbar, .premium-banner-outer, .premium-banner, .thing.promotedlink, #hsts_pixel
 !! Obscure posts from liberal subreddits
 reddit.com###siteTable > .thing:has(.tagline > .subreddit:has-text(/^r/(againsthatesubreddits|amitheasshole|atheism|baseball|blackpeopletwitter|CapitolConsequences|china|Conservative|coronavirus|dankmemes|facepalm|fragilemaleredditor|fragilewhiteredditor|fuckyoukaren|funny|hockey|iamatotalpieceofshit|iamverybadass|iamverysmart|idiotsincars|justiceserved|leopardsatemyface|memes|mildlyinteresting|minecraft|murderedbyaoc|MurderedByWords|nba|news|offmychest|pewdiepiesubmissions|pics|politicalhumor|politics|publicfreakout|selfawarewolves|showerthoughts|therightcantmeme|trashy|whitepeopletwitter|winstupidprizes|worldnews)$/i)):style(opacity: 0.1;)
