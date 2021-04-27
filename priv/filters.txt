@@ -12,9 +12,9 @@ expressjs.com###blm-banner
 fandom.com##._1MLS_xjiUjam_u2qmURY4i
 fandom.com##body._2CE3idgw4xgGVje2bvPxLv:style(overflow-y: auto !important;)
 fandom.com##.wds-global-navigation__content-bar-left, #ShareEntryPoint, .featured-video__wrapper, #WikiaAdInContentPlaceHolder, #mixed-content-footer, .wds-global-footer, #WikiaBar:has(.wikia-bar-anon)
-! github.com##.js-remove-unless-platform.tooltipped-nw.tooltipped.btn-octicon
 !! Google products bar, annoying (blocked) tracking pixel
 mail.google.com###gbar, img[src$="/cleardot.gif"]
+grammarly.com##._1X8pZ-overlay
 !! Imgur bloat
 imgur.com##.App-cover.GalleryCover, .Gallery-EngagementBar, .Gallery-Sidebar, .badges-wrapper, .BottomRecirc, .Footer-wrapper, iframe
 instagram.com##.Yx5HN.RnEpo:has-text(Turn on Notifications)
@@ -27,6 +27,7 @@ assignments.onenote.com##.assignment-card-class-name-text__37Hag:has-text(Math C
 !! Login prompt
 open.spotify.com##.ao.ap.as.b3.b4.eo.da.ep.eq.er.dk.es
 pinterest.ca###related-pins-section
+play.typeracer.com###school-edition-promo, .createAccountPrompt, .sidebarBlocks, .practiceViewScoresPopup
 psychologytoday.com##.sidebar_first, #block-pt-stats-most-popular, #block-pt-td-fat-cities, #block-pt-blog-clinical-paths-next, .share-buttons, .footer_nav__magazine_archive
 realsimple.com##.articleContainer__sharebar
 reddit.com##.ad-container, [id^="ad_"], .listingsignupbar, .premium-banner-outer, .premium-banner, .thing.promotedlink, #hsts_pixel
@@ -46,6 +47,7 @@ aup.vsb.bc.ca##body:style(overflow: visible !important;)
 w3schools.com##.trytopnav:style(top: 0 !important;)
 w3schools.com###container:style(top: 40px !important;)
 web.archive.org##iron-overlay-backdrop, #consent-bump, ytd-popup-container > paper-dialog.style-scope.ytd-popup-container
+wikihow.com##.pdf_link, #side_related_articles, #article_courses_banner
 youtube.com##iron-overlay-backdrop, #consent-bump, ytd-popup-container > paper-dialog.style-scope.ytd-popup-container
 zapier.com##.hello-pop-up, .hello-pop-up--not-top
 
@@ -131,6 +133,7 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 ||static.foxnews.com/static/leap/sites/fnc/metrics.js^$script,important
 ||video.foxnews.com/v/feed/playlist/$xhr,important
 ||api.imgur.com/post/v1/posts^$xhr,important
+||smashingmagazine.com/js/CookieBanner.*.js^$script
 !! Block Zoom auto download
 ||zoom.us/launch/download/*/Zoom_launcher.exe^$frame,1p,important
 usatoday.com##+js(abort-on-property-read, _sp_._networkListenerData)
