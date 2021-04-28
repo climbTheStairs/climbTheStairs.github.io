@@ -39,6 +39,8 @@ reddit.com##.happening-now-wrap:has-text(r/Coronavirus)
 ! startpage.com##.article-block--default.article-block--addon.article-block, .widget-install-sp--.widget-install-sp
 theconversation.com##.clear.slot:has(> .inline-promos-skeleton)
 thepiratebay.org,piratebayztemzmv.onion##a[href^="https://www.get-express-vpn.com/offer/"], a[href^="https://www.get-express-vpn.xyz/offer/"]
+time.com##body:style(position: static !important;)
+time.com##.lazy-image img:style(display: block !important;)
 vln.ucourses.com##.d2l-page-message-container:has-text(Your browser is looking a little retro)
 ! urbandictionary.com##.ad-panel, .def-panel:nth-of-type(3)
 aup.vsb.bc.ca##body:style(overflow: visible !important;)
