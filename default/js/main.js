@@ -118,8 +118,7 @@
         random(n) {
             return Math.floor(Math.random() * n)
         },
-        subst(substs) {
-            let str = this
+        subst(str, substs) {
             for (const [key, val] of Object.entries(substs))
                 str = str.replace("${" + key + "}", val)
             return str
