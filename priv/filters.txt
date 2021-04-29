@@ -5,6 +5,8 @@ askubuntu.com,stackexchange.com,stackoverflow.com,superuser.com##.js-consent-ban
 askubuntu.com,stackexchange.com,stackoverflow.com,superuser.com##body, .top-bar:style(margin-top: 0 !important;)
 cbr.com##.ad-zone-container, .related-single, .sharing, .next-single, .sentinel-article-nextArticle, .sidebar-tabs, .w-article-related
 cnn.com##.related-content, .video_related
+com.au##.vjs-playlist
+debatewise.org##.os-animation:style(opacity: 1 !important;)
 dictionary.com,thesaurus.com###grammar-coach-ad
 diffchecker.com##.ReactModalPortal, .hero, .banner-container, .ads
 expressjs.com###blm-banner
