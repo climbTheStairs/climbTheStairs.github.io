@@ -258,5 +258,6 @@ usatoday.com##+js(abort-on-property-read, _sp_._networkListenerData)
 @@||s.pushauction.com^$css,domain=vi.vipr.ebaydesc.com
 @@||ecosia.org/images^$script,inline-script,xhr,1p
 @@||api.imgur.com/post/v1/albums/$xhr,1p
+@@||api.imgur.com/post/v1/media/$xhr,1p
 @@||api.imgur.com/comment/v1/comments^$xhr,1p
 @@/favicon.ico^$image,3p,domain=ucourses.com,badfilter
