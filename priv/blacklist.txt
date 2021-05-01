@@ -288,6 +288,7 @@
 * da-ads.com * block
 * dable.io * block
 * data.typeracer.com * block
+* make6pain.com * block
 * datacaciques.com * block
 * datadoghq.com * block
 * datamind.ru * block
