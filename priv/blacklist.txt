@@ -289,6 +289,8 @@
 * dable.io * block
 * data.typeracer.com * block
 * make6pain.com * block
+* concertads-configs.vox-cdn.com
+* analytics.civicplus.com * block
 * datacaciques.com * block
 * datadoghq.com * block
 * datamind.ru * block

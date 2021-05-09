@@ -6,18 +6,21 @@ askubuntu.com,stackexchange.com,stackoverflow.com,superuser.com##body, .top-bar:
 cbr.com##.ad-zone-container, .related-single, .sharing, .next-single, .sentinel-article-nextArticle, .sidebar-tabs, .w-article-related
 cnn.com##.related-content, .video_related
 com.au##.vjs-playlist
+community.chocolatey.org##body.modal-open:style(overflow: initial !important;)
+community.chocolatey.org##.modal-backdrop, #cookieNoticeAlert, #package-disclaimer
 debatewise.org##.os-animation:style(opacity: 1 !important;)
 dictionary.com,thesaurus.com###grammar-coach-ad
 diffchecker.com##.ReactModalPortal, .hero, .banner-container, .ads
 expressjs.com###blm-banner
 !! Cookie notice
 fandom.com##._1MLS_xjiUjam_u2qmURY4i
-fandom.com##body._2CE3idgw4xgGVje2bvPxLv:style(overflow-y: auto !important;)
+fandom.com##body._2CE3idgw4xgGVje2bvPxLv:style(overflow-y: initial !important;)
 fandom.com##.wds-global-navigation__content-bar-left, #ShareEntryPoint, .featured-video__wrapper, #WikiaAdInContentPlaceHolder, #mixed-content-footer, .wds-global-footer
 fandom.com###WikiaBar:has(.wikia-bar-anon)
 !! Google products bar, annoying (blocked) tracking pixel
 mail.google.com###gbar, img[src$="/cleardot.gif"]
 grammarly.com##._1X8pZ-overlay
+howtogeek.com##.email-overlay, .overlay-wrapper:has-text(The Best Tech Newsletter Anywhere)
 !! Imgur bloat
 imgur.com##.App-cover.GalleryCover, .Gallery-EngagementBar, .Gallery-Sidebar, .badges-wrapper, .BottomRecirc, .Footer-wrapper, iframe
 instagram.com##.Yx5HN.RnEpo:has-text(Turn on Notifications)
@@ -46,7 +49,7 @@ time.com##body:style(position: static !important;)
 time.com##.lazy-image img:style(display: block !important;)
 vln.ucourses.com##.d2l-page-message-container:has-text(Your browser is looking a little retro)
 ! urbandictionary.com##.ad-panel, .def-panel:nth-of-type(3)
-aup.vsb.bc.ca##body:style(overflow: visible !important;)
+aup.vsb.bc.ca##body:style(overflow: initial !important;)
 ! w2g.tv##.w2g-search-results, .w2g-center-plus, .w2g-search-spacer
 w3schools.com##.trytopnav:style(top: 0 !important;)
 w3schools.com###container:style(top: 40px !important;)
@@ -262,3 +265,5 @@ usatoday.com##+js(abort-on-property-read, _sp_._networkListenerData)
 @@||api.imgur.com/post/v1/media/$xhr,1p
 @@||api.imgur.com/comment/v1/comments^$xhr,1p
 @@/favicon.ico^$image,3p,domain=ucourses.com,badfilter
+
+
