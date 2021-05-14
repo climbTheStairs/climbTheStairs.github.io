@@ -19,6 +19,7 @@ fandom.com##.wds-global-navigation__content-bar-left, #ShareEntryPoint, .feature
 fandom.com###WikiaBar:has(.wikia-bar-anon)
 !! Google products bar, annoying (blocked) tracking pixel
 mail.google.com###gbar, img[src$="/cleardot.gif"]
+www.google.com##^script:has-text(consentCookiePayload)
 grammarly.com##._1X8pZ-overlay
 howtogeek.com##.email-overlay, .overlay-wrapper:has-text(The Best Tech Newsletter Anywhere)
 !! Imgur bloat
@@ -92,9 +93,6 @@ zapier.com##.hello-pop-up, .hello-pop-up--not-top
 ||google.com/*^name=tz^$script
 ||google.com/*^v=tz^$image
 ||google.com/*^tz=*^$image
-!!! Consent box
-!!! https://old.reddit.com/r/uBlockOrigin/wiki/solutions#wiki_google_consent_dialog
-www.google.com##+js(addEventListener-defuser, DOMContentLoaded, CONSENT)
 www.google.com##+js(ignore-target-blank)
 
 !! Instagram
