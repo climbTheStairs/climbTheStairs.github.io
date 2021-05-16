@@ -21,7 +21,7 @@ fandom.com###WikiaBar:has(.wikia-bar-anon)
 mail.google.com###gbar, img[src$="/cleardot.gif"]
 www.google.com##^script:has-text(consentCookiePayload)
 grammarly.com##._1X8pZ-overlay
-howtogeek.com##.email-overlay, .overlay-wrapper:has-text(The Best Tech Newsletter Anywhere)
+howtogeek.com##.email-overlay, .email-overlay + .overlay-wrapper
 !! Imgur bloat
 imgur.com##.App-cover.GalleryCover, .Gallery-EngagementBar, .Gallery-Sidebar, .badges-wrapper, .BottomRecirc, .Footer-wrapper, iframe
 instagram.com##.Yx5HN.RnEpo:has-text(Turn on Notifications)
