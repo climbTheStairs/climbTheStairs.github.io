@@ -287,11 +287,14 @@
 * d41.co * block
 * da-ads.com * block
 * dable.io * block
+* seal.digicert.com * block
+* selfishsnake.com * block
 * data.typeracer.com * block
 * make6pain.com * block
 * concertads-configs.vox-cdn.com
 * pfx.io
 * impactradius-go.com
+* feedbackws.icloud.com * block
 * analytics.civicplus.com * block
 * datacaciques.com * block
 * datadoghq.com * block
