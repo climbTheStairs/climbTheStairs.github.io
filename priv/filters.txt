@@ -265,3 +265,16 @@ usatoday.com##+js(abort-on-property-read, _sp_._networkListenerData)
 @@/favicon.ico^$image,3p,domain=ucourses.com,badfilter
 
 
+! Lazy load
+fandom.com##+js(remove-class, lazyload)
+fandom.com##+js(unlazy-load)
+fandom.com##^script
+www.fandom.com#@#^script
+psychologytoday.com##+js(unlazy-load)
+psychologytoday.com##^script
+samuitimes.com##+js(unlazy-load)
+samuitimes.com##^script
+snopes.com##+js(unlazy-load, data-lazy-src)
+snopes.com##^script
+wikihow.com##+js(unlazy-load, data-srclarge)
+wikihow.com##^script
