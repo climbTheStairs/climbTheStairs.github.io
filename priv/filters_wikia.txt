@@ -6,4 +6,8 @@ fandom.com##.wikia-gallery-item:style(display: inline-block;)
 fandom.com##.portable-infobox:style(float: right; overflow-x: auto; padding: 10px; max-width: 300px;)
 fandom.com##.info-icon > svg:style(float: right; width: 18px; height: 18px;)
 fandom.com##svg:style(max-width: 25px; max-height: 25px;)
+fandom.com##+js(remove-class, lazyload)
+fandom.com##+js(unlazy-load)
+fandom.com##^script
+www.fandom.com#@#^script
 *$css,script,domain=fandom.com|~www.fandom.com,important
