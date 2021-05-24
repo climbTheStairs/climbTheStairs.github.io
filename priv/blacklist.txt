@@ -291,9 +291,9 @@
 * selfishsnake.com * block
 * data.typeracer.com * block
 * make6pain.com * block
-* concertads-configs.vox-cdn.com
-* pfx.io
-* impactradius-go.com
+* concertads-configs.vox-cdn.com * block
+* pfx.io * block
+* impactradius-go.com * block
 * feedbackws.icloud.com * block
 * analytics.civicplus.com * block
 * datacaciques.com * block
@@ -416,6 +416,7 @@
 * gleam.io * block
 * forter.com * block
 * d35u1vg1q28b3w.cloudfront.net * block
+* make6pain.com * block
 * glitter.services.disqus.com * block
 * globalwebindex.net * block
 * gmossp-sp.jp * block
