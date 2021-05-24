@@ -151,6 +151,7 @@ usatoday.com##+js(abort-on-property-read, _sp_._networkListenerData)
 @@||cdn.jsdelivr.net/npm/js-cookie@rc/$script
 
 !! Captchas
+www.google.com###rc-imageselect :is(div.rc-imageselect-tile, .rc-imageselect-dynamic-selected):style(opacity: 1 !important; transition: none !important;)
 @@||google.com/recaptcha/
 @@||gstatic.com/recaptcha/
 
