@@ -19,7 +19,7 @@ fandom.com##.wds-global-navigation__content-bar-left, #ShareEntryPoint, .feature
 fandom.com###WikiaBar:has(.wikia-bar-anon)
 !! Google products bar, annoying (blocked) tracking pixel
 mail.google.com###gbar, img[src$="/cleardot.gif"]
-www.google.com##^script:has-text(consentCookiePayload)
+www.google.com,images.google.com##^script:has-text(consentCookiePayload)
 grammarly.com##._1X8pZ-overlay
 howtogeek.com##.email-overlay, .email-overlay + .overlay-wrapper
 !! Imgur bloat
