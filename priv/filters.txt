@@ -31,7 +31,7 @@ lifehacker.com.au##.aside.col
 teams.microsoft.com###main-notification-banner:has-text(Your status message is showing in chat and channels when people message or @mention you.)
 nationalgeographic.com###fittPortal_0
 nationalgeographic.com##body.Scroll--locked:style(overflow: initial !important; position: initial !important; top: initial !important;)
-nationalgeographic.com##body.Scroll--locked:style(width: auto !important;)
+nationalgeographic.com##body.Scroll--locked .PageLayout:style(width: auto !important;)
 !! Login prompt
 open.spotify.com##.ao.ap.as.b3.b4.eo.da.ep.eq.er.dk.es
 pinterest.ca###related-pins-section
