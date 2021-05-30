@@ -37,6 +37,8 @@ open.spotify.com##.ao.ap.as.b3.b4.eo.da.ep.eq.er.dk.es
 pinterest.ca###related-pins-section
 play.typeracer.com###school-edition-promo, .createAccountPrompt, .sidebarBlocks, .practiceViewScoresPopup
 psychologytoday.com##.sidebar_first, #block-pt-stats-most-popular, #block-pt-td-fat-cities, #block-pt-blog-clinical-paths-next, .share-buttons, .footer_nav__magazine_archive
+quora.com##.qu-zIndex--alert.qu-overflow--hidden.qu-justifyContent--center.qu-alignItems--center.q-flex:has-text(By continuing I agree)
+quora.com##.q-box.qu-overflow--hidden:style(filter: initial !important; inset: initial !important; overflow: initial !important; position: initial !important;)
 realsimple.com##.articleContainer__sharebar
 reddit.com##.ad-container, [id^="ad_"], .listingsignupbar, .premium-banner-outer, .premium-banner, .thing.promotedlink, #hsts_pixel
 !! Obscure posts from liberal subreddits
@@ -81,7 +83,7 @@ zapier.com##.hello-pop-up, .hello-pop-up--not-top
 *$image,domain=fcdn.stream|twist.moe|vidsrc.*
 *$script,domain=ecosia.org|fcdn.stream|mail.google.com|lancashiretelegraph.co.uk|reddit.com|theguardian.com|usatoday.com|vidsrc.*
 *$inline-script,domain=ecosia.org|mail.google.com|lancashiretelegraph.co.uk
-*$xhr,websocket,domain=ecosia.org|fcdn.stream|imgur.com|lancashiretelegraph.co.uk|realsimple.com|eddit.com|vidsrc.*
+*$xhr,websocket,domain=ecosia.org|fcdn.stream|imgur.com|lancashiretelegraph.co.uk|quora.com|realsimple.com|reddit.com|vidsrc.*
 *$frame,domain=foxnews.com
 *$ping
 
@@ -141,6 +143,10 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 ||static.foxnews.com/static/leap/sites/fnc/metrics.js^$script,important
 ||video.foxnews.com/v/feed/playlist/$xhr,important
 ||api.imgur.com/post/v1/posts^$xhr,important
+||quora.com/ajax/log_errors_3RD_PARTY_POST^$xhr,important
+||quora.com/ajax/receive_POST^$xhr,important
+||quora.com/graphql/gql_para_POST?q=AnswerExpandAdLoaderQuery^$xhr,important
+||quora.com/graphql/gql_para_POST?q=facebookAutoLogin_Query^$xhr,important
 ||smashingmagazine.com/js/CookieBanner.*.js^$script
 !! Block Zoom auto download
 ||zoom.us/launch/download/*/Zoom_launcher.exe^$frame,1p,important
@@ -266,6 +272,13 @@ www.google.com###rc-imageselect :is(div.rc-imageselect-tile, .rc-imageselect-dyn
 @@||api.imgur.com/post/v1/albums/$xhr,1p
 @@||api.imgur.com/post/v1/media/$xhr,1p
 @@||api.imgur.com/comment/v1/comments^$xhr,1p
+@@||quora.com/graphql/gql_POST?q=AnswerBookmarkButton_answerBookmarkAdd_Mutation^$xhr
+@@||quora.com/graphql/gql_POST?q=AnswerUpvoteDownvoteButton_answerUpvoteAdd_Mutation^$xhr
+@@||quora.com/graphql/gql_POST?q=LoginForm_loginDo_Mutation^$xhr
+@@||quora.com/graphql/gql_para_POST?q=AnswerCommentWithPreviewLoaderQuery^$xhr
+@@||quora.com/graphql/gql_para_POST?q=LoginForm_loginInfoPreview_Query^$xhr
+@@||quora.com/graphql/gql_para_POST?q=MultifeedQuery^$xhr
+@@||quora.com/graphql/gql_para_POST?q=QuestionAnswerPagedListQuery^$xhr
 @@/favicon.ico^$image,3p,domain=ucourses.com,badfilter
 
 
