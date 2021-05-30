@@ -29,7 +29,9 @@ instagram.com##.Yx5HN.RnEpo:has-text(Turn on Notifications)
 ! knowyourmeme.com###search-interest, #sidebar, .google-trends-embed-wrapper, .section_content.related_memes
 lifehacker.com.au##.aside.col
 teams.microsoft.com###main-notification-banner:has-text(Your status message is showing in chat and channels when people message or @mention you.)
-assignments.onenote.com##.assignment-card-class-name-text__37Hag:has-text(Math Challengers @ DT 2020 to 2021):upward(.assignment-list-card-link__2tVU3)
+nationalgeographic.com###fittPortal_0
+nationalgeographic.com##body.Scroll--locked:style(overflow: initial !important; position: initial !important; top: initial !important;)
+nationalgeographic.com##body.Scroll--locked:style(width: auto !important;)
 !! Login prompt
 open.spotify.com##.ao.ap.as.b3.b4.eo.da.ep.eq.er.dk.es
 pinterest.ca###related-pins-section
