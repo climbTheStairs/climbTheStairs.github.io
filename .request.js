@@ -8,7 +8,7 @@ const Request = class extends http.IncomingMessage {
         const ips = []
         const xForwardedFor = this.headers['x-forwarded-for']
         const { remoteAddress } = this.socket
-        if (typeof xForwardedFor === "string" && xFowardedFor !== "")
+        if (typeof xForwardedFor === "string" && xForwardedFor !== "")
             ips.push(...xForwardedFor.split(","))
         if (typeof remoteAddress === "string")
             ips.push(remoteAddress)

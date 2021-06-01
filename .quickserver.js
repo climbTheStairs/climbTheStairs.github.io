@@ -14,15 +14,15 @@ const IncomingMessage = require("./.request.js")
 const ServerResponse = require("./.response.js")
 
 const getFromCertDir = (f) => {
-    const certDir = "C:/Certbot/live/site.climbthestairs.org/"
+    const certDir = "C:/Certbot/live/climbthestairs.org/"
     const data = fs.readFileSync(path.join(certDir, f), FS_OPTIONS)
     return data
 }
-const key = getFromCertDir("privkey.pem")
 const cert = getFromCertDir("fullchain.pem")
+const key = getFromCertDir("privkey.pem")
 
 const options = { IncomingMessage, ServerResponse }
-const secureOptions = { ...options, key, cert }
+const secureOptions = { ...options, cert, key }
 
 const rescue = (req, res) => {
     console.log(`${req.getIp()} | 301 ${req.url}`)
@@ -31,11 +31,12 @@ const rescue = (req, res) => {
 }
 const respond = (req, res) => {
     const { pathname } = url.parse(req.url)
-    console.log(`${req.getIp()} | GET ${pathname}`)
-    if (path.extname(pathname) === "")
-        return res.respondPage(pathname)
+    const { host } = req.headers
+    console.log(`${req.getIp()} | GET ${host + pathname}`)
     if (pathname === "/favicon.ico")
         return res.respondFile("/default/icons/demonic_object.svg")
+    if (path.extname(pathname) === "")
+        return res.respondPage(pathname)
     return res.respondFile(pathname)
 }
 
