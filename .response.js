@@ -3,24 +3,14 @@
 const fs = require("fs")
 const http = require("http")
 const path = require("path")
-
-const FS_OPTIONS = {
-    encoding: "utf-8",
-    flag: "r",
-}
-const MIME_TYPES = {
-    ".css": "text/css",
-    ".html": "text/html",
-//  ".ico": "image/x-icon",
-    ".js": "text/javascript",
-    ".svg": "image/svg+xml",
-    ".ttf": "font/ttf",
-    ".txt": "text/plain",
-}
-const DEFAULT_CONTENT_TYPE = "application/octet-stream"
+const {
+    FS_OPTIONS,
+    MIME_TYPES,
+    UNKNOWN_CONTENT_TYPE,
+} = require("./.storage.json")
 
 const getContentType = (ext) => {
-    const contentType = MIME_TYPES[ext] || DEFAULT_CONTENT_TYPE
+    const contentType = MIME_TYPES[ext] || UNKNOWN_CONTENT_TYPE
     return contentType + "; charset=utf-8"
 }
 

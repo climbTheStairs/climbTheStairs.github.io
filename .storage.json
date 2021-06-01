@@ -1,0 +1,15 @@
+{
+    "FS_OPTIONS": {
+        "encoding": "utf-8",
+        "flag": "r"
+    },
+    "MIME_TYPES": {
+        ".css": "text/css",
+        ".html": "text/html",
+        ".js": "text/javascript",
+        ".svg": "image/svg+xml",
+        ".ttf": "font/ttf",
+        ".txt": "text/plain"
+    },
+    "UNKNOWN_CONTENT_TYPE": "application/octet-stream"
+}
