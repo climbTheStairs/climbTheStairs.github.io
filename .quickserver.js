@@ -9,13 +9,13 @@ const http = require("http")
 const https = require("https")
 const path = require("path")
 const url = require("url")
-const { FS_OPTIONS } = require("./.storage.json")
 const IncomingMessage = require("./.request.js")
 const ServerResponse = require("./.response.js")
 
 const getFromCertDir = (f) => {
     const certDir = "C:/Certbot/live/climbthestairs.org/"
-    const data = fs.readFileSync(path.join(certDir, f), FS_OPTIONS)
+    const filePath = path.join(certDir, f)
+    const data = fs.readFileSync(filePath)
     return data
 }
 const cert = getFromCertDir("fullchain.pem")
@@ -25,18 +25,24 @@ const options = { IncomingMessage, ServerResponse }
 const secureOptions = { ...options, cert, key }
 
 const rescue = (req, res) => {
-    console.log(`${req.getIp()} | 301 ${req.url}`)
+    const { host } = req.headers
+    const { pathname } = url.parse(req.url)
+    console.log(`${req.getIp()} | 301 ${host + pathname}`)
     res.redirect("https://" + req.headers.host + req.url)
     return res.end()
 }
 const respond = (req, res) => {
-    const { pathname } = url.parse(req.url)
     const { host } = req.headers
+    let { pathname } = url.parse(req.url)
     console.log(`${req.getIp()} | GET ${host + pathname}`)
+    if (pathname === "/")
+        pathname = "/index"
+    if (pathname.endsWith("/"))
+        pathname = pathname.slice(0, -1)
     if (pathname === "/favicon.ico")
-        return res.respondFile("/default/icons/demonic_object.svg")
+        pathname = "/default/icons/demonic_object.svg"
     if (path.extname(pathname) === "")
-        return res.respondPage(pathname)
+        pathname += ".html"
     return res.respondFile(pathname)
 }
 

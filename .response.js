@@ -3,11 +3,7 @@
 const fs = require("fs")
 const http = require("http")
 const path = require("path")
-const {
-    FS_OPTIONS,
-    MIME_TYPES,
-    UNKNOWN_CONTENT_TYPE,
-} = require("./.storage.json")
+const { MIME_TYPES, UNKNOWN_CONTENT_TYPE } = require("./.storage.json")
 
 const getContentType = (ext) => {
     const contentType = MIME_TYPES[ext] || UNKNOWN_CONTENT_TYPE
@@ -15,18 +11,13 @@ const getContentType = (ext) => {
 }
 
 const Response = class extends http.ServerResponse {
-    respondPage(pathname) {
-        if (pathname.endsWith("/"))
-            pathname += "index"
-        return this.respondFile(pathname + ".html")
-    }
     respondFile(pathname) {
         if (pathname.split("/").some(x => x.startsWith(".")))
             return this.missing(pathname)
         let data
         const absPath = path.join(__dirname, pathname)
         try {
-            data = fs.readFileSync(absPath, FS_OPTIONS)
+            data = fs.readFileSync(absPath)
         } catch (err) {
             if (err.code === "ENOENT")
                 return this.missing(pathname)

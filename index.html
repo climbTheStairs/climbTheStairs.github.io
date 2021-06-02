@@ -3,10 +3,20 @@
 <head>
     <meta charset="utf-8">
     <title>Main | climbTheStairs</title>
-    <link rel="stylesheet" href="default/css/main.css">
+    <link rel="stylesheet" href="/default/css/main.css">
 </head>
 <body>
     Epstein didn't kill himself
-    <script src="default/js/main.js"></script>
+    <script src="/default/js/main.js"></script>
+    <script>
+const nggyu = new Audio("/files/never_gonna_give_you_up.opus")
+const rickRoll = () => {
+    nggyu.play()
+    document.removeEventListener("click", rickRoll)
+}
+setTimeout(() => {
+    document.addEventListener("click", rickRoll)
+}, 5000)
+    </script>
 </body>
 </html>
