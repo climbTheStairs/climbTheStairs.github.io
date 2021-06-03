@@ -1,0 +1,11 @@
+{
+    ".css": "text/css",
+    ".html": "text/html",
+    ".js": "text/javascript",
+    ".md": "text/plain",
+    ".opus": "audio/ogg",
+    ".png": "image/png",
+    ".svg": "image/svg+xml",
+    ".ttf": "font/ttf",
+    ".txt": "text/plain"
+}
