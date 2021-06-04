@@ -36,6 +36,7 @@ nationalgeographic.com##body.Scroll--locked .PageLayout:style(width: auto !impor
 open.spotify.com##.ao.ap.as.b3.b4.eo.da.ep.eq.er.dk.es
 pinterest.ca###related-pins-section
 play.typeracer.com###school-edition-promo, .createAccountPrompt, .sidebarBlocks, .practiceViewScoresPopup
+politico.com##body:style(visibility: visible !important;)
 psychologytoday.com##.sidebar_first, #block-pt-stats-most-popular, #block-pt-td-fat-cities, #block-pt-blog-clinical-paths-next, .share-buttons, .footer_nav__magazine_archive
 quora.com##.qu-zIndex--alert.qu-overflow--hidden.qu-justifyContent--center.qu-alignItems--center.q-flex:has-text(By continuing I agree)
 quora.com##.q-box.qu-overflow--hidden:style(filter: initial !important; inset: initial !important; overflow: initial !important; position: initial !important;)
