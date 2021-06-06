@@ -68,7 +68,7 @@ zapier.com##.hello-pop-up, .hello-pop-up--not-top
 ||fncstatic.com^$3p
 ||gannettdigital.com^$3p
 ||gannett-cdn.com^$3p
-||google.*^$3p,domain=~youtube.com|~translate.goog
+||google.*^$3p,domain=~chromium.org|~translate.goog|~youtube.com
 ||gstatic.com^$3p,domain=~chromium.org|~google.com|~translate.goog
 ||meredithcorp.io^$3p
 ||pushauction.com^$3p

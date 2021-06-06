@@ -1,3 +1,4 @@
+* log.people.cn * block
 * 1clickcdn.ru * block
 * 1dmp.io * block
 * 1rx.io * block
