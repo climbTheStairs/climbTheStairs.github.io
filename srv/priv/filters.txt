@@ -99,6 +99,7 @@ zapier.com##.hello-pop-up, .hello-pop-up--not-top
 ||google.com/*^v=tz^$image
 ||google.com/*^tz=*^$image
 ||youtube.com/api/stats/$image
+||chromium.org/v1/logging^$xhr,important
 www.google.com##+js(ignore-target-blank)
 
 !! Instagram
