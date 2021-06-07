@@ -1,9 +1,6 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "A Node.js server for hosting my website.",
-  "main": "lib/server.js",
-  "keywords": [],
-  "author": "",
-  "license": "GPL"
+    "name": "server",
+    "version": "1.0.0",
+    "description": "A Node.js server for hosting my website.",
+    "main": "lib/server.js"
 }
