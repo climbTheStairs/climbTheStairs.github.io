@@ -281,6 +281,7 @@ www.google.com###rc-imageselect :is(div.rc-imageselect-tile, .rc-imageselect-dyn
 @@||quora.com/graphql/gql_para_POST?q=LoginForm_loginInfoPreview_Query^$xhr
 @@||quora.com/graphql/gql_para_POST?q=MultifeedQuery^$xhr
 @@||quora.com/graphql/gql_para_POST?q=QuestionAnswerPagedListQuery^$xhr
+@@||quora.com/graphql/gql_para_POST?q=QuestionRelevantAnswersPagedListLoaderQuery^$xhr
 @@/favicon.ico^$image,3p,domain=ucourses.com,badfilter
 
 
