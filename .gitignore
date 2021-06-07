@@ -1,3 +1,3 @@
-srv/audio/
+etc/tor/
 logs/
-tor/
+srv/audio/

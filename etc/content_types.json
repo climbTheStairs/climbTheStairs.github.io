@@ -4,6 +4,7 @@
     ".js": "text/javascript",
     ".md": "text/plain",
     ".opus": "audio/ogg",
+    ".pdf": "application/pdf",
     ".png": "image/png",
     ".svg": "image/svg+xml",
     ".ttf": "font/ttf",
