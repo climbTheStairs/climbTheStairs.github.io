@@ -1,8 +1,8 @@
 ! Cosmetic filters
 ###eu-cookie-policy
 aoeu.eu##.cookiebar
-askubuntu.com,stackexchange.com,stackoverflow.com,superuser.com##.js-consent-banner, .js-dismissable-hero, #noscript-warning
-askubuntu.com,stackexchange.com,stackoverflow.com,superuser.com##body, .top-bar:style(margin-top: 0 !important;)
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##.js-consent-banner, .js-dismissable-hero, #noscript-warning
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##body, .top-bar:style(margin-top: 0 !important;)
 cbr.com##.ad-zone-container, .related-single, .sharing, .next-single, .sentinel-article-nextArticle, .sidebar-tabs, .w-article-related
 cnn.com##.related-content, .video_related
 com.au##.vjs-playlist
