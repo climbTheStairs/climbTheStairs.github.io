@@ -278,6 +278,7 @@ www.google.com###rc-imageselect :is(div.rc-imageselect-tile, .rc-imageselect-dyn
 @@||quora.com/graphql/gql_POST?q=AnswerUpvoteDownvoteButton_answerUpvoteAdd_Mutation^$xhr
 @@||quora.com/graphql/gql_POST?q=LoginForm_loginDo_Mutation^$xhr
 @@||quora.com/graphql/gql_para_POST?q=AnswerCommentWithPreviewLoaderQuery^$xhr
+@@||quora.com/graphql/gql_para_POST?q=AnswerUpvoterListModalQuery^$xhr
 @@||quora.com/graphql/gql_para_POST?q=LoginForm_loginInfoPreview_Query^$xhr
 @@||quora.com/graphql/gql_para_POST?q=MultifeedQuery^$xhr
 @@||quora.com/graphql/gql_para_POST?q=QuestionAnswerPagedListQuery^$xhr
