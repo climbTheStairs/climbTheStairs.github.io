@@ -540,7 +540,6 @@
 * linksynergy.com * block
 * littlecdn.com * block
 * livechatinc.com * block
-* livefyre.com * block
 * livehub.me * block
 * lkqd.net * block
 * lngtd.com * block
