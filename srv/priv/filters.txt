@@ -286,8 +286,8 @@ www.google.com###rc-imageselect :is(div.rc-imageselect-tile, .rc-imageselect-dyn
 
 
 ! Lazy load
-fandom.com##+js(remove-class, lazyload)
-fandom.com##+js(unlazy-load)
+cracked.com##+js(unlazy-load)
+cracked.com##^script
 
 lifewire.com##img[data-placeholder="blurry"]:style(filter: initial !important;)
 lifewire.com##+js(unlazy-load)
