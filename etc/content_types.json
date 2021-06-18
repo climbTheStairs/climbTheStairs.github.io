@@ -8,5 +8,6 @@
     ".png": "image/png",
     ".svg": "image/svg+xml",
     ".ttf": "font/ttf",
-    ".txt": "text/plain"
+    ".txt": "text/plain",
+    ".zip": "application/zip"
 }
