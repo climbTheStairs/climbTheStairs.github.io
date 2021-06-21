@@ -293,4 +293,4 @@ looper.com,snopes.com##+js(unlazy-load, data-lazy-src)
 wikihow.com##+js(unlazy-load, data-srclarge)
 fandom.com,lifewire.com##+js(remove-class, lazyload)
 djhjmedia.com##+js(remove-class, animate-lazy)
-cracked.com,lifewire.com,looper.com,psychologytoday.com,samuitimes.com,snopes.com,wikihow.com##^script
+cracked.com,djhjmedia.com,lifewire.com,looper.com,psychologytoday.com,samuitimes.com,snopes.com,wikihow.com##^script
