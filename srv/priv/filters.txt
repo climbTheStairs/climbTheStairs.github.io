@@ -288,24 +288,8 @@ www.google.com###rc-imageselect :is(div.rc-imageselect-tile, .rc-imageselect-dyn
 
 
 ! Lazy load
-cracked.com##+js(unlazy-load)
-cracked.com##^script
-
 lifewire.com##img[data-placeholder="blurry"]:style(filter: initial !important;)
-lifewire.com##+js(unlazy-load)
-lifewire.com##^script
-
-looper.com##+js(unlazy-load, data-lazy-src)
-looper.com##^script
-
-psychologytoday.com##+js(unlazy-load)
-psychologytoday.com##^script
-
-samuitimes.com##+js(unlazy-load)
-samuitimes.com##^script
-
-snopes.com##+js(unlazy-load, data-lazy-src)
-snopes.com##^script
-
+cracked.com,lifewire.com,psychologytoday.com,samuitimes.com##+js(unlazy-load)
+looper.com,snopes.com##+js(unlazy-load, data-lazy-src)
 wikihow.com##+js(unlazy-load, data-srclarge)
-wikihow.com##^script
+cracked.com,lifewire.com,looper.com,psychologytoday.com,samuitimes.com,snopes.com,wikihow.com##^script
