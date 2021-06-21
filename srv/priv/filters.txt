@@ -295,6 +295,9 @@ lifewire.com##img[data-placeholder="blurry"]:style(filter: initial !important;)
 lifewire.com##+js(unlazy-load)
 lifewire.com##^script
 
+looper.com##+js(unlazy-load, data-lazy-src)
+looper.com##^script
+
 psychologytoday.com##+js(unlazy-load)
 psychologytoday.com##^script
 
