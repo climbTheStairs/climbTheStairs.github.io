@@ -104,10 +104,12 @@ www.google.com##+js(ignore-target-blank)
 
 !! Instagram
 ||instagram.com/ajax/bz^$xhr
-||i.instagram.com/api/v1/direct_v2/get_presence^$xhr
+!!! blocks "Seen" for stories
+||instagram.com/stories/reel/seen^$xhr
+||instagram.com/qp/batch_fetch_web^$xhr
+||instagram.com/accounts/get_encrypted_credentials^$xhr
 !!! blocks sending "Seen" message
 ||i.instagram.com/api/v1/direct_v2/threads/*/items/*/seen^$xhr
-||i.instagram.com/api/v1/notifications/badge^$badfilter
 
 !! Reddit
 ||reddit.com/static/pixel.png^$image
