@@ -315,7 +315,6 @@
 * df-srv.de * block
 * diagnostics.redditmedia.com * block
 * dianomi.com * block
-* digitaloceanspaces.com * block
 * digitaltarget.ru * block
 * digitru.st * block
 * displaycontentprofit.com * block
