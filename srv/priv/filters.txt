@@ -25,8 +25,7 @@ howtogeek.com##.email-overlay, .email-overlay + .overlay-wrapper
 !! Imgur bloat
 imgur.com##.App-cover.GalleryCover, .Gallery-EngagementBar, .Gallery-Sidebar, .badges-wrapper, .BottomRecirc, .Footer-wrapper, iframe
 instagram.com##.Yx5HN.RnEpo:has-text(Turn on Notifications)
-! khanacademy.org##._7fvkmfg
-! knowyourmeme.com###search-interest, #sidebar, .google-trends-embed-wrapper, .section_content.related_memes
+knowyourmeme.com##.longcat.wrap, #omgkym, #leaderboard, .share-button, #search-interest, #sidebar, .google-trends-embed-wrapper, .section_content.related_memes, #news_feeds, .related-news
 lifehacker.com.au##.aside.col
 teams.microsoft.com###main-notification-banner:has-text(Your status message is showing in chat and channels when people message or @mention you.)
 nationalgeographic.com###fittPortal_0
@@ -149,6 +148,7 @@ vidsrc.me##+js(no-setInterval-if, devtoolsOpen)
 ||static.foxnews.com/static/leap/sites/fnc/metrics.js^$script,important
 ||video.foxnews.com/v/feed/playlist/$xhr,important
 ||api.imgur.com/post/v1/posts^$xhr,important
+knowyourmeme.com##+js(no-setInterval-if, /^/, 300)
 ||quora.com/ajax/log_errors_3RD_PARTY_POST^$xhr,important
 ||quora.com/ajax/receive_POST^$xhr,important
 ||quora.com/graphql/gql_para_POST?q=AnswerExpandAdLoaderQuery^$xhr,important
@@ -289,11 +289,11 @@ www.google.com###rc-imageselect :is(div.rc-imageselect-tile, .rc-imageselect-dyn
 @@/favicon.ico^$image,3p,domain=ucourses.com,badfilter
 
 ! Unlazy-load
-cracked.com,djhjmedia.com,fandom.com,lifewire.com,psychologytoday.com,samuitimes.com##+js(unlazy-load)
+cracked.com,djhjmedia.com,fandom.com,knowyourmeme.com,lifewire.com,psychologytoday.com,samuitimes.com##+js(unlazy-load)
 looper.com,snopes.com##+js(unlazy-load, data-lazy-src)
 wikihow.com##+js(unlazy-load, data-srclarge)
 cbsnews.com##+js(unlazy-load, data-srcset, srcset)
 gadgetstouse.com##img:style(opacity: 1 !important;)
 fandom.com,lifewire.com##+js(remove-class, lazyload)
 djhjmedia.com##+js(remove-class, animate-lazy)
-cbsnews.com,cracked.com,djhjmedia.com,lifewire.com,looper.com,psychologytoday.com,samuitimes.com,snopes.com,wikihow.com##^script
+cbsnews.com,cracked.com,djhjmedia.com,knowyourmeme.com,lifewire.com,looper.com,psychologytoday.com,samuitimes.com,snopes.com,wikihow.com##^script
