@@ -279,8 +279,12 @@ www.google.com###rc-imageselect :is(div.rc-imageselect-tile, .rc-imageselect-dyn
 @@||api.imgur.com/post/v1/media/$xhr,1p
 @@||api.imgur.com/comment/v1/comments^$xhr,1p
 @@||quora.com/graphql/gql_POST?q=AnswerBookmarkButton_answerBookmarkAdd_Mutation^$xhr
+@@||quora.com/graphql/gql_POST?q=AnswerDownvoteButton_answerDownvoteAdd_Mutation^$xhr
+@@||quora.com/graphql/gql_POST?q=AnswerDownvoteButton_answerDownvoteRemove_Mutation^$xhr
 @@||quora.com/graphql/gql_POST?q=AnswerUpvoteDownvoteButton_answerUpvoteAdd_Mutation^$xhr
+@@||quora.com/graphql/gql_POST?q=AnswerUpvoteDownvoteButton_answerUpvoteRemove_Mutation^$xhr
 @@||quora.com/graphql/gql_POST?q=LoginForm_loginDo_Mutation^$xhr
+@@||quora.com/graphql/gql_POST?q=ReportModalInner_addReport_Mutation^$xhr
 @@||quora.com/graphql/gql_para_POST?q=AllCommentsListQuery^$xhr
 @@||quora.com/graphql/gql_para_POST?q=AnswerCommentLoaderQuery^$xhr
 @@||quora.com/graphql/gql_para_POST?q=AnswerCommentWithPreviewLoaderQuery^$xhr
@@ -288,6 +292,7 @@ www.google.com###rc-imageselect :is(div.rc-imageselect-tile, .rc-imageselect-dyn
 @@||quora.com/graphql/gql_para_POST?q=LoginForm_loginInfoPreview_Query^$xhr
 @@||quora.com/graphql/gql_para_POST?q=MultifeedQuery^$xhr
 @@||quora.com/graphql/gql_para_POST?q=QuestionAnswerPagedListQuery^$xhr
+@@||quora.com/graphql/gql_para_POST?q=ReportModalQuery^$xhr
 @@/favicon.ico^$image,3p,domain=ucourses.com,badfilter
 
 ! Unlazy-load
