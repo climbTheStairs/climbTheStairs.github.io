@@ -299,8 +299,8 @@ www.google.com###rc-imageselect :is(div.rc-imageselect-tile, .rc-imageselect-dyn
 cracked.com,djhjmedia.com,fandom.com,knowyourmeme.com,lifewire.com,psychologytoday.com,samuitimes.com##+js(unlazy-load)
 looper.com,snopes.com##+js(unlazy-load, data-lazy-src)
 wikihow.com##+js(unlazy-load, data-srclarge)
-cbsnews.com##+js(unlazy-load, data-srcset, srcset)
+cbsnews.com,makeuseof.com##+js(unlazy-load, data-srcset, srcset)
 gadgetstouse.com##img:style(opacity: 1 !important;)
 fandom.com,lifewire.com##+js(remove-class, lazyload)
 djhjmedia.com##+js(remove-class, animate-lazy)
-cbsnews.com,cracked.com,djhjmedia.com,knowyourmeme.com,lifewire.com,looper.com,psychologytoday.com,samuitimes.com,snopes.com,wikihow.com##^script
+cbsnews.com,cracked.com,djhjmedia.com,knowyourmeme.com,lifewire.com,looper.com,makeuseof.com,psychologytoday.com,samuitimes.com,snopes.com,wikihow.com##^script
