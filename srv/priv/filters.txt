@@ -25,7 +25,7 @@ howtogeek.com##.email-overlay, .email-overlay + .overlay-wrapper
 !! Imgur bloat
 imgur.com##.App-cover.GalleryCover, .Gallery-EngagementBar, .Gallery-Sidebar, .badges-wrapper, .BottomRecirc, .Footer-wrapper, iframe
 instagram.com##.Yx5HN.RnEpo:has-text(Turn on Notifications)
-knowyourmeme.com##.longcat.wrap, #omgkym, #leaderboard, .share-button, #search-interest, #sidebar, .google-trends-embed-wrapper, .section_content.related_memes, #news_feeds, .related-news
+knowyourmeme.com##.longcat.wrap, #omgkym, #leaderboard, .share-button, #search-interest, #sidebar, .google-trends-embed-wrapper, .section_content.related_memes, #news_feeds, .related-news, .top-entries
 lifehacker.com.au##.aside.col
 teams.microsoft.com###main-notification-banner:has-text(Your status message is showing in chat and channels when people message or @mention you.)
 nationalgeographic.com###fittPortal_0
