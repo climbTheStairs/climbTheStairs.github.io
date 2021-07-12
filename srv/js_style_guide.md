@@ -691,7 +691,7 @@
     fn(x)
     ```
 
-- Lines of code *should* be kept short and *must not* exceed eighty characters.
+- Lines of code *should* be kept short and *must* be under eighty characters.
 
 - Comments and strings must not cause their lines to exceed seventy-two characters. If they do, they must be broken up into multiple lines.
 
